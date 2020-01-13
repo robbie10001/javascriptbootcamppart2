@@ -199,8 +199,8 @@ Arrow functions are just a shorter version of a regular function expression.
 They are just more compact, even though they have the same functionality. 
 */ 
 //ALL THESE FUNCTIONS DO EXACTLY THE SAME THING JUST WITH DIFFERENT SYNTAX. 
-Arrow functions are just a shorter version of a regular function expression. 
 
+/*
 
 //REGULAR FUNCTION EXPRESSION
 const isEven = function (num) {
@@ -240,12 +240,65 @@ const doubles2 = nums.map(n => {
 
 const doubles3 = nums.map(n => n * 2);
 
+*/
+
 
 /*
 ARRAY.FIND
 
+Returns the value of the first element in the array that satisfies the provided testing function. 
 
 */ 
+console.log("----------break---------")
+
+
+let movies = [
+    "stargate", 
+    "firefly",
+    "the tudors",
+    "game of thrones"
+]
+
+//the includes method returns boolean values to see if our array contains a given element. 
+//find ends by default when a first match is found. 
+
+const movie = movies.find(movie => {
+    console.log(movie.includes("the"))//false, false, true, false
+    return movies.includes("the");
+})
+
+movie 
+
+const bookers = [{
+    title: "good omens",
+    authors: ["terry pratchett", "neil gaiman"], 
+    rating: 4.25
+},
+{
+    title: "Bone",
+    authors: ["jeff smith"],
+    rating: 4.42
+},
+{
+    title: "American Gods",
+    authors: ["neil gaiman"],
+    rating: 4.11
+},
+{
+    title: "A gentleman in moscow",
+    authors: ["Amor towles"],
+    rating: 4.36
+}
+]
+
+const goodBook = bookers.find(b => b.rating >= 4.3);
+console.log(goodBook)//{ title: 'Bone', authors: [ 'jeff smith' ], rating: 4.42 }
+
+const neilBook = bookers.find(b => {
+    b.authors.includes("neil")
+    console.log(neilBook)
+})
+
 
 /*
 FILTER
