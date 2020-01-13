@@ -1,0 +1,77 @@
+
+/*
+INTRODUCTION TO ARRAY CALLBACK METHODS
+
+
+*/ 
+
+/*
+FOREACH
+
+
+*/ 
+
+/*
+MAP 
+
+
+*/ 
+
+/*
+ARROW FUNCTIONS INTRO
+
+
+*/ 
+
+/*
+ARROW FUNCTIONS: IMPLICIT RETURNS
+
+
+*/ 
+
+/*
+ARRAY.FIND
+
+
+*/ 
+
+/*
+FILTER
+
+
+*/ 
+
+/*
+SOME AND EVERY
+
+
+*/ 
+
+/*
+REVISITING SORT!
+
+
+*/ 
+
+/*
+REDUCE INTRO
+
+
+*/ 
+
+/*
+REDUCE PART 2 
+
+
+*/ 
+
+/*
+EVEN MORE REDUCE! 
+
+
+*/ 
+
+/*
+
+
+*/ 
