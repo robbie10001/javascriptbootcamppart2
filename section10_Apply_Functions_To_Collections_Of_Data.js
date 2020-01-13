@@ -161,8 +161,31 @@ console.log(abbrevs)
 /*
 ARROW FUNCTIONS INTRO
 
+Arrow functions are a syntactically compact alternative to a regular function expression. 
+Arrow functions are not only syntactically different. 
+They also function differently when using the keyword .this 
+Although besides this, they are just a faster way to write functions. 
+paranthesis ae option if they's only one argument.
+We use empty paranethisis if we have a function with no arguments. 
 
 */ 
+//we define a function 
+//we use the equal sign.
+//we pass in our paramater. 
+//we then make a  fat arrow
+//we then pass in our argument. 
+const squarerer = (x) => {
+    return x * x; 
+}
+
+const sumers = (x, y) => {
+    return x + y;
+}
+
+const squarerered = x => {
+    return x * x; 
+}
+
 
 /*
 ARROW FUNCTIONS: IMPLICIT RETURNS
