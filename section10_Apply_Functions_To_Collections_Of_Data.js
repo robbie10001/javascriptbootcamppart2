@@ -100,13 +100,63 @@ numberz.forEach(function(num, index){
     console.log(index, num)//0 9, 1 8, 2 7, 3 6, 4 5, 5 4, 6 3, 7 2, 8 1,
 })
 
-
-
 /*
 MAP 
 
+Creates a new array with the results of calling a callback on every element in the array. 
+It can be used to take bits of an array or do other cool things with an array. 
 
 */ 
+//we create an array called texts which contains 4 string elements. 
+const texts = ["rofl", "lol", "omg", "ttyl"]; 
+//we then define a variable called caps. 
+//we then call texts.map and pass a callback function in with he paramater of t, which represents each element in the string.
+//we are returning from the function t. toUpperCase. 
+//What this map does overall is it creates a new array, in which we store the new information in (caps).
+//we are not alterating the original array, we have instead made a new array. 
+const caps = texts.map(function (t) {
+    return t.toUpperCase();
+})
+console.log(texts);//[ 'rofl', 'lol', 'omg', 'ttyl' ]
+console.log(caps);//[ 'ROFL', 'LOL', 'OMG', 'TTYL' ]
+
+const themNumbers = [20, 21, 22, 23, 24, 25, 26, 27];
+const themWords = ["asap", "byob", "rsvp", "diy"];
+
+//we are usingan annonymous function because we don't need to save the function.
+//the callback paramatr we are going to use is num, in represents each number. 
+//this function need to return a value, otherwise map will not work.
+const doublez = themNumbers.map(function(num){
+//this function need to return a value, otherwise map will not work.
+    return num * 2;
+})
+
+console.log(doublez)//[ 40, 42, 44, 46, 48, 50, 52, 54 ]
+
+const thoseNumbers = [20, 21, 22, 23, 24, 25, 26, 27];
+
+const doubleUp = thoseNumbers.map(function (num){
+    return num * 2;
+});
+
+const numDetail = thoseNumbers.map(function(n){
+    return {
+        value: n,
+        isEven: n % 2 === 0 
+    }
+})
+
+console.log(numDetail)//{ value: 20, isEven: true },{ value: 21, isEven: false },{ value: 22, isEven: true }, { value: 23, isEven: false },
+//and so on! 
+
+const thoseWords = ["asap", "byob", "rsvp", "diy"];
+
+const abbrevs = thoseWords.map(function (word){
+    return word.toUpperCase().split("").join(".")//[ 'A.S.A.P', 'B.Y.O.B', 'R.S.V.P', 'D.I.Y' ]
+   
+})
+console.log(abbrevs)
+
 
 /*
 ARROW FUNCTIONS INTRO
