@@ -181,17 +181,65 @@ const squarerer = (x) => {
 const sumers = (x, y) => {
     return x + y;
 }
-
+//if we have one paramater we can leave the square brackets off. 
 const squarerered = x => {
     return x * x; 
 }
-
+//if we have no paramaters 
+const squarerereded = () => {
+    return x * x; 
+}
 
 /*
 ARROW FUNCTIONS: IMPLICIT RETURNS
 
-
+There is an even more compact way to write arrow functions. 
+This is through implicit return 
+Arrow functions are just a shorter version of a regular function expression. 
+They are just more compact, even though they have the same functionality. 
 */ 
+//ALL THESE FUNCTIONS DO EXACTLY THE SAME THING JUST WITH DIFFERENT SYNTAX. 
+Arrow functions are just a shorter version of a regular function expression. 
+
+
+//REGULAR FUNCTION EXPRESSION
+const isEven = function (num) {
+    return num % 2 === 0;
+}
+//ARROW FUNCTION WITH PARENS AROUND PARAMS. 
+const isEven = (num) => {
+    return num % 2 === 0;
+}
+//NO PARENTS AROUND PARAMS. 
+const isEven = num => {
+    return num % 2 === 0;
+}
+//IMPLICIT RETURN 
+const isEven = num => {
+    num % 2 === 0;
+//In this example, we are just returning one argument. 
+//In this case, we can avoid using the return keyword. 
+}
+//ONE-LINER IMPLICIT RETURN 
+const isEven = num => num % 2 === 0; 
+//one-liners are really a use case. 
+//in this example again, we don't need the return keyword. 
+//we should only use this syntax on short functions WITH single arguments.
+//if we have multiple statements javascript will not allow us to use implicit return. 
+//we can have multiple things that javascript could potentially return. 
+
+const numberers = [1, 2, 3, 4, 5, 6, 7, 8]; 
+
+const doubles1 = nums.map(function (n){
+    return n * 2 
+})
+
+const doubles2 = nums.map(n => {
+    return n * 2;
+})
+
+const doubles3 = nums.map(n => n * 2);
+
 
 /*
 ARRAY.FIND
