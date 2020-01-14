@@ -367,10 +367,35 @@ const allEndInG = animalWords.every(word => {
 
 const someStartWithD = animalWords.some(word => animalWords[0] === "d"); 
 
+console.log("----------break--------")
 /*
 REVISITING SORT!
+The default behaviour for sort, without any arguments is for sort to create a string of all our array elements and then sort them that way. 
 
+In order to customise the behaviour of sort we use compare functions. 
+These functions have two parameters, and we return a value from the compareFunc function. 
+
+if compareFunction(a, b) returns less than 0 - sort before b 
+if compareFunction(a, b) returns 0- leave a and b unchanged with respect to each other.
+if compareFunction(a, b) returnsreturns greater than 0- sort b before a 
 */ 
+const prices = [1, 10, 23, 34, 12, 100];
+console.log(prices.sort()) //[ 1, 10, 100, 12, 23, 34 ]
+
+//here we are sorting from smallest to largest. 
+const prices1 = prices.sort((a,b) => a - b);
+console.log(prices1)//[ 1, 10, 12, 23, 34, 100 ]
+//a = 1
+//b = 10 
+// (1)a - (10)b = -9, therefore we sort a before b. 
+//a = 34
+//b = 12 
+//34(a) - 12(b) = 22, therefore we sort b before a.
+//if we have equal numbers that order between these numbers stay the same. 
+
+//here we are sorting from largest to smallest! 
+const prices2 = prices.sort((a,b) => b - a);
+console.log(prices2)//[ 100, 34, 23, 12, 10, 1 ]
 
 /*
 REDUCE INTRO
