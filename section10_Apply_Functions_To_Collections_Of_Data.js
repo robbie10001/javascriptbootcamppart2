@@ -294,27 +294,81 @@ const bookers = [{
 const goodBook = bookers.find(b => b.rating >= 4.3);
 console.log(goodBook)//{ title: 'Bone', authors: [ 'jeff smith' ], rating: 4.42 }
 
-const neilBook = bookers.find(b => {
-    b.authors.includes("neil")
-    console.log(neilBook)
-})
-
 
 /*
 FILTER
-
+filer is another array method that expects a callback function.
+Filter creates a new array with all elements that pass the test implemented by the provided function. 
+Filter allows us to filter out subsets of arrays. 
+Bascially, we pass in a test function that is either true or false. 
+if an element passes that function, it will be passed to the return array.
+It doesn't change the original array, we are making a copy with our filtered elements. 
 
 */ 
+const numBer = [9, 8, 7, 6, 5, 4, 3, 2, 1,]
+
+const odder = numBer.filter(n => {
+    return n % 2 === 1; //out callback returns true or false. 
+//if it returns true, n is added to the filtered array. 
+})
+console.log(odder); //[9, 7, 5, 3, 1]
+
+const smallNumberz = numBer.filter(n => n < 5); 
+console.log(smallNumberz); //[4,3,2,1]
+
+const nums = [34, 35, 67, 54, 109, 102, 32, 9];
+
+//this num filter basically checks if a number is odd. 
+const odders = nums.filter(n => n % 2 === 1)
+console.log(odders);//[ 35, 67, 109, 9 ]
+const evenz = nums.filter(n => n % 2 === 0)
+//this method filter out only the even numbers. 
+console.log(evenz);//[ 34, 54, 102, 32 ]
+const bigNumz = nums.filter(n => n > 50);
+//this method filters out any number that is smaller than 50
+console.log(bigNumz);//[ 67, 54, 109, 102 ]
+
 
 /*
 SOME AND EVERY
-
-
+both of the these methods return a boolean true of false. 
+Every- tests whether all ements in the array pass the provided function. It returns a boolean value. 
+Some- similar to every, but returns true if ANY of the array elements pass the test function. 
 */ 
+const animalz = ["dog", "cat", "fish", "pig"]
+//every element within the function must return true for the function to return true. 
+const isItThree = animalz.every(animalz => animalz.length === 3);
+console.log(isItThree); //false
+const isItThree1 = animalz.every(animalz => animalz.length > 2);
+console.log(isItThree1); //true 
+const isAllLastWordAG = animalz.every(word => {
+    const last = word.length -1; 
+    console.log([last] === 'g'); //false 
+})
+
+console.log("---------break---------")
+//Some only cares if any element of the array returns true. 
+const animalWords = ["dog", "cat", "fish", "pig"]
+//are there any words longer than four characters? 
+animalWords.some(word => {
+    return word.length > 4; //false 
+});
+console.log("---------break---------")
+//are thre any words that are longer than 3 characters?
+animalWords.some(word => {
+    return word.length > 3; //true
+});
+
+const allEndInG = animalWords.every(word => {
+    const last = animalWords.length - 1;
+    return word[last] === "g"
+    
+});
+
+const someStartWithD = animalWords.some(word => animalWords[0] === "d"); 
 
 /*
 REVISITING SORT!
-
 
 */ 
 
