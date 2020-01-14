@@ -397,11 +397,49 @@ console.log(prices1)//[ 1, 10, 12, 23, 34, 100 ]
 const prices2 = prices.sort((a,b) => b - a);
 console.log(prices2)//[ 100, 34, 23, 12, 10, 1 ]
 
+
 /*
 REDUCE INTRO
 
+Reduce is a build in array method, we pass a call back to it, let we have done with all our other array methods. 
+Reduce is a bit different. It is very useful and versitile, although it's a little tricky to explain. 
+Reduce is something i need to practice in order to get good at it. 
+
+Reduce takes an array of values and reduces it down to a single value. 
+Reduce executes a reducer function on each element of the array, resulting in a single value. 
+Each element is combined and reduced down to a single element. 
+An application for the reduce method is summing an array for example. 
+We could use reducer to find the maximum value in an array. 
+Or reduce an array from 100 numbers down to a single maximum. 
+It could be used to tally data within an array 
+We are taking a bunch of values and reducing this down to a single value. 
+
 
 */ 
+console.log("------break------");
+
+let reducings = [3, 5, 7, 9, 11]
+//the reduce method is callback with at least two paramaters. 
+//the first paramater (accumlator) stores the end result of the reduce method. 
+//the second paramater (currentValues), represents each element in the array as reduce works through the array. 
+//in our example we are going to just sum all values in our array. 
+reducings.reduce((accumlator, currentValues) => {
+    console.log(accumlator + currentValues) //8, 15, 24, 35
+    //First call= (accumlator =3+ currentValue =5) 8,Second Call = (3  + 5 + 7)15, Third call= (3  + 5 + 7 + 9) 24, Fourth call = (3  + 5 + 7 + 9 + 11)35 
+    return accumlator + currentValues; 
+});
+console.log("-------break--------")
+const numeringz = [3, 4, 5, 6, 7];
+const product = numeringz.reduce((total, currentVal) => {
+    console.log(total * currentVal)//12, 60, 360, 2520
+    //3x4x5x6x7 = 2520
+    return total * currentVal
+    
+});
+
+
+
+
 
 /*
 REDUCE PART 2 
