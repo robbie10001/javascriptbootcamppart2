@@ -437,15 +437,43 @@ const product = numeringz.reduce((total, currentVal) => {
     
 });
 
-
-
-
-
 /*
 REDUCE PART 2 
-
+We have seen reduced used in a simple way, however we can use reduce in more complex ways. 
+We can use REDUCE to find the maximum value in an array. 
+We can use REDUCE not only to multiply, or sum things together, but to keep track of some piece of data! 
+We can pass in an initial value, as the second argument in reduce! 
 
 */ 
+
+console.log("------break------")
+let grades = [89, 56, 43, 54, 95]
+
+let maxGrade = grades.reduce((max, currVal) => {
+    if(currVal > max) return currVal; 
+        return max; 
+
+})
+console.log(maxGrade) //this prints out 95!
+
+let minGrade = grades.reduce((min, currVal) => {
+    Math.min(min, currVal)
+});
+console.log(minGrade)
+
+const summer = [10,20,30,40,50].reduce((sum, currVal) =>{
+    return sum + currVal;
+}, 1000)
+
+console.log(summer)//this prints out 1150
+
+
+
+
+
+
+
+
 
 /*
 EVEN MORE REDUCE! 
