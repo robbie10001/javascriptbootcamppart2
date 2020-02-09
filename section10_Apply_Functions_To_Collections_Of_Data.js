@@ -443,7 +443,6 @@ We have seen reduced used in a simple way, however we can use reduce in more com
 We can use REDUCE to find the maximum value in an array. 
 We can use REDUCE not only to multiply, or sum things together, but to keep track of some piece of data! 
 We can pass in an initial value, as the second argument in reduce! 
-
 */ 
 
 console.log("------break------")
@@ -467,21 +466,40 @@ const summer = [10,20,30,40,50].reduce((sum, currVal) =>{
 
 console.log(summer)//this prints out 1150
 
-
-
-
-
-
-
-
-
 /*
 EVEN MORE REDUCE! 
 
-
-*/ 
-
-/*
+We can use Reduce to tally up the results of an array. 
+We can group different values in an array using an object. 
 
 
-*/ 
+*/
+const votes = ["y", "y", "n", "y", "n", "y", "absent", "abstain"];
+
+const results = votes.reduce((tally, val) => {
+    if(tally[val]) {
+        tally[val]++
+    } else {
+        tally[val] = 1;
+    }
+    return tally 
+}, {})
+
+console.log(results)// { y: 4, n: 2, absent: 1, abstain: 1 }
+//{}
+//{y:1}- first iteration
+//{y:2} - second iteration
+
+//WE CAN also write this another wa. 
+
+const electionResult = votes.reduce((tally, val) => {
+    tally[val] = (tally[val] || 0) + 1;
+    return tally
+}, {})
+console.log(electionResult);//{ y: 4, n: 2, absent: 1, abstain: 1 }
+
+
+
+
+
+
