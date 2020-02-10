@@ -176,16 +176,78 @@ console.log(myAnimals)//{ legs: 4, family: 'Caninae', furry: true, cat: 'archie'
 
 
 /*
-THE ARGUMENTS OBJECT 
+REST - THE ARGUMENTS OBJECT 
+
+Rest looks a lot like spread but its not! This is because it has the same syntax ... 
+Rest behaves very differently from spread. It is almost the opposite. 
+What it does is collects data down into a single array. 
+It is used when we want to create functions that have an unlimited amount of arguments, or a variable number of arguments. 
+
+The  arguments object, is available inside every function. 
+It's an array-like object. It has a length property. Does not have array methods. 
+Contains all the arguments passed to the function. Not available inside of arrow functions!
+
 
 */ 
+//with Math.max we can pass in as many arguments as we like. 
+console.log(Math.max(1,4,5,7,23,45)) //this returns 45. 
 
+//this is not the answer! 
+function sum(a,b,c,d,e,f,g,h,i,j,k) {
+
+}
+
+//notice, we don't need to put in any arguments. 
+function sumAll() {
+    let total = 0;
+    for(let i = 0; i < arguments.length; i ++)
+{       total += arguments[i];   
+    }  
+    return total;     
+}
+console.log(sumAll(8,4,3,2));//17
+console.log(sumAll(2,3));//5 
+//THIS IS NOT THE BEST WAY WE SHOULD DO THIS! 
+
+function summer() {
+   const argsArr = [...arguments]
+    return arguments.reduce((total, currVal) => {
+        return total + currVal
+    })
+};
+//THIS RETURNS 15. 
 
 /*
 REST PARAMETERS 
 
-*/ 
+Rest is ... but we put it in the paramatter list of a function. 
+It collects all remaining arguments into an array. 
 
+*/ 
+//USING REST. 
+
+//1. we use ...
+//2. we use a name. This will be the name of the array which holds all our arguments.
+
+function sumer(...nums){
+    console.log(nums); 
+}
+sumer(4,5,6,7)//[ 4, 5, 6, 7 ]
+
+function summing(...nums) {
+    return nums.reduce((total, currVal) => {
+        return total + currVal
+    })
+}
+console.log(summing(2,3,4,5)) //14
+
+function fullNames(first, last, ...titles){
+    console.log("first", first)//first tom
+    console.log("last", last)//last jones
+    console.log("titles", titles)//titles [ 'iii', 'order of the pheonix' ]
+}
+
+fullNames("tom", "jones", "iii", "order of the pheonix")// 
 
 
 /*
