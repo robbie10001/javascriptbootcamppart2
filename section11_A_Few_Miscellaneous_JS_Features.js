@@ -253,25 +253,133 @@ fullNames("tom", "jones", "iii", "order of the pheonix")//
 /*
 DESTRUCTURING ARRAYS 
 
-*/ 
+A short, clean syntax to "unpack": values from arrays. properties from objects into distinct variables. 
 
+
+*/ 
+const raceResults = ["Robbie", "Ricky", "Harry", "Bruce"];
+
+const [gold, silver, bronze, last ] = raceResults;
+gold;  //robbie
+silver; //ricky
+bronze; //harry
+last; //bruce
+
+const [fastest, ...everyoneElse] = raceResults;
+fastest; //robbie
+everyoneElse; //ricky, harry, bruce. 
+
+const marathonResults = [
+    "robbie",
+    "ricky",
+    "harry",
+    "bruce"
+];
+
+const golds = marathonResults[0]
+const silvers = marathonResults[1]
+const bronzes = marathonResults[2]
+const lasts = marathonResults[3]
+
+//we can do this a lot easier, for example. 
+
+const [golder, silverer, bronzeer, laster] = marathonResults; 
+console.log(golder)//robbie
+console.log(laster)//bruce 
+const [first, , , fourth] = marathonResults
+console.log(first, fourth)//robbie, bruce
+
+//we can also use our rest ... inside of our destructuring in order to get the rest of an array within a new variable. 
+
+const [winner, ...others] = raceResults
+console.log(winner, ...others)//Robbie Ricky Harry Bruce
 
 /*
 DESTRUCTURING OBJECTS 
 
+In an object, we make the variables based of the name of the property. 
+
 */ 
 
+const runner = {
+    firstName: "Robbie",
+    lastName: "Colborne", 
+    country: "Australia",
+    title: "The King of Beecroft"
+}
+//all we need to do is use an object curly brace and then single out the properties that we want. 
+//our variable holds the value of our firstName, lastName and country. 
+const {firstName,lastName,country} = runner; 
 
+console.log(firstName, lastName, country)//Robbie Colborne Australia
+
+const {
+    title: realTitle
+} = runner 
+
+console.log(realTitle)//The King of Beecroft
 
 /*
 NESTED DESTRUCTURING 
 
+
 */ 
+const results = [{
+    firstest: "Robbie", 
+    lastest: "Colborne", 
+    countriest: "Australia"
+    },
+    { 
+    firstest: "Harry", 
+    lastest: "Frankel", 
+    countriest: "Australia"
 
+    },
+    {
+    firstest: "Ricky", 
+    lastest: "Man", 
+    countriest: "Italy"
+    }
+]
 
+const [{firstest: goldWinner
+},{countriest}] = results; 
+console.log(goldWinner, countriest)//Robbie Australia
+
+//The point is that we can combine our syntax. 
 
 /*
 DESTRUCTURING PARAMETERS 
 
+One more place we often see destructuring used, is inside a function definition where the paramaters are listed. 
+If we put it in a function definition it will unpack values from the arguments that we pass in. 
+
 */ 
+const fullName = ({firsta, lasta}) => {
+    console.log(`${firsta} ${lasta}` + "!")//Robbie Colborne!
+}
+const runnera = {
+    firsta: "Robbie", 
+    lasta: "Colborne", 
+    countrya: "Australia",
+}
+
+fullName(runnera)
+
+const response = [
+    "HTTP/1.1",
+    "200 OK",
+    "application/json",
+]
+
+function parseResponse([protocol, statusCode, contentType]){
+    console.log(`Status: ${statusCode}`)
+};
+
+
+
+
+
+
+
 
