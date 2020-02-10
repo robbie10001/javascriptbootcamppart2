@@ -147,16 +147,32 @@ console.log(meWithMollusca); //[ 'Robbie','dumbo octopus','humboldt squid','flam
 
 const copyMollusca = [...mollusca]
 
-
-
-
-
-
-
 /*
 SPREAD IN OBJECT LITERALS  
 
+Copies properties from one object into another object literal 
+Spread only works if we use something that is iterable! 
+
 */ 
+const feline = {
+    legs: 4, 
+    family: "Felidea"
+};
+
+const canine = { 
+    family: "Caninae", 
+    furry: true
+};
+
+const dog = {
+    ...canine, 
+    isPet: true, 
+    adorable: true, 
+}
+console.log(dog);//{ family: 'Caninae', furry: true, isPet: true, adorable: true }
+const myAnimals = {...feline, ...canine, cat:"archie" }
+console.log(myAnimals)//{ legs: 4, family: 'Caninae', furry: true, cat: 'archie' }
+
 
 
 /*
