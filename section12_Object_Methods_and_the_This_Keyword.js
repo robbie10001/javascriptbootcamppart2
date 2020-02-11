@@ -202,9 +202,57 @@ console.log(auth.logout())//Goodbye
 /*
 Intro to keyword THIS 
 
+This - The keyword this can be a major point of confusion and misery and hardship, 
+and general suffering in the life of a new JS developer. 
+
+This- is one of the keys to writting useful methods on our objects. 
+
+This- is also pretty useful once we get to DOM manipulation. 
+When we do things like add events, or click events and the like. 
+
+In reality, this is not that bad. What is tricky, is that sometimes the value may seem unpridictable. 
+
+There are a set of concrete rules that dictate, what the value of THIS is. 
+
+THIS is a keyword. It's a reference to the current execusions scope. It returns an object.
+
+Depending on the scope and the rules of how THIS works, that object changes. 
+
+It could be a reference to the global scope for example. 
 
 */ 
+console.log("----break----")
 
+function sayHi() {
+    console.log("Hi")
+    console.log(this);
+
+};
+
+sayHi()
+//when we call this function we get "Hi", and we also get a bunch of stuff from our console.log(this)
+//This, returns an object [global] with node, [window] within the broswer. 
+//the [window],  is the global scope in the browser. 
+//when we define a function, it looks like it is floating on its own, but it is actually created as method on the [window] object (global scope of our browser)
+
+//this inside of a function, normally refers to the [window]. In node, it's the global object. 
+//remember that this can change, so it does depend on how it is called. 
+
+//the window/global contains all sorts of properties. Things like alert("lol").
+//However, it is a property of the window. So we could call it like the following window.alert("lol")
+
+//When we declare a variable with var, that variable is added to the window. 
+var color = "teal"; 
+//so we could reference it as the follows. 
+window.color
+//however, this does not work with let or const, they are not added to the global scope. 
+
+const greet = function() {
+    console.log(this); 
+}
+//in this example, we are still calling globally (the window)
+
+//This is a reference to an object, and that object represents the current object scope. 
 
 /*
 Using THIS in methods 
