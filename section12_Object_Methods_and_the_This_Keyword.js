@@ -242,9 +242,9 @@ sayHi()
 //However, it is a property of the window. So we could call it like the following window.alert("lol")
 
 //When we declare a variable with var, that variable is added to the window. 
-var color = "teal"; 
+//var color = "teal"; 
 //so we could reference it as the follows. 
-window.color
+//window.color
 //however, this does not work with let or const, they are not added to the global scope. 
 
 const greet = function() {
@@ -257,8 +257,46 @@ const greet = function() {
 /*
 Using THIS in methods 
 
+Now we are going to see where THIS becomes far more useful.
+
 
 */ 
+
+console.log("-----break-----")
+//We create an object
+const persons = {
+//this object has the key value pairs. 
+    first: "Robbie", 
+    last: "Colborne",
+    nickName: "Bigdog",
+//we add a method to the object. 
+//we can use either the shorthand or the longer way to define the method. 
+    fullName() {
+        console.log(this);//{ first: 'Robbie', last: 'Colborne', nickName: 'Bigdog', fullName: [Function: fullName] }
+//This type we are not getting the [window]. Instead we are getting something else. 
+//The value of this is the persons object itself. The value of this has been set to a different object, but the method it's inside of. 
+
+//it is useful, because it allows us to reference the properties or other methods for example, 
+        console.log(this.first)//Robbie
+//THIS is a reference to the object, dot first will give us the value. 
+        console.log(`${this.first} ${this.last} AKA ${this.nickName}`)//Robbie Colborne AKA Bigdog
+//This is a good spot for us to use destructuring. 
+        const {first, last, nickName} = this;
+        return (`${first} ${last} AKA ${nickName}`)//Robbie Colborne AKA Bigdog
+//let's not change the value of nickName. 
+       
+//Now we have the ability to right a method that is aware of the object it lives in, 
+//this means we can use objects not just to store different methods because they are related, 
+//now we have a way of interacting with properties, values or even different methods. 
+//our object can now be its own little self contained world! 
+  
+    },
+    printBio() {
+        const fullName = this.fullName();
+        console.log(`${fullName} is a person!`)
+    }
+}
+persons.fullName()
 
 
 /*
