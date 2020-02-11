@@ -164,13 +164,44 @@ console.log(mathematics.multiply(5,6))//30
 /*
 Method Shorthand Syntax
 
-
-*/
+We can use an arrow function although this is not that common. 
+In addition, there is a nice new short hand for adding a method to an object, where we don't have to use the key value pair syntax. 
  
+*/
+console.log("------break-----")
 
+const matho = {
+    blah: "Hi!",
+    add(x,y) {
+        return x + y; 
+    },
+    multiply(x,y) {
+        return x * y;
+    }
+}
+ 
+//console.log(matho.blah(''))
+console.log(matho.add(50, 60))//110
+console.log(matho.multiply(50, 60))//3000
+
+const auth = {
+    username: "TommyBoy",
+//login is the key, and the function is the value that corresponds to it.
+    login(){
+        console.log("You are logged in")
+    },
+    logout(){
+        console.log("Goodbye")
+    }
+}
+console.log(auth)//{ username: 'TommyBoy', login: [Function: login], logout: [Function: logout] }
+console.log(auth.username)//TommyBoy
+console.log(auth.login())//You are logged in
+console.log(auth.logout())//Goodbye
 
 /*
 Intro to keyword THIS 
+
 
 */ 
 
