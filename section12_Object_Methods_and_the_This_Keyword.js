@@ -115,9 +115,52 @@ const rest = addProp(team, "happy", ":)")
 /*
 Adding Methods To Objects 
 
+We can add functions as properties on objects! We call this methods!
+The reason we do this, firstly, is to group functions together, and put functions into cohesieve units. 
+When we define a function on it's own and add in an object, and call it with the dot notation we are creating a method! 
+
 */ 
 
 
+
+const adder = {
+    multiply: function(x,y) {
+        return x * y;
+    },
+    divide : function(x, y) {
+        return x/y; 
+    },
+};
+//we define an object. 
+//and we can add functions in! 
+const maths = {
+    adder
+
+}
+console.log(maths)//{ adder:{ multiply: [Function: multiply], divide: [Function: divide], square: [Function: square] } }
+
+//normally, what we do is something like this. 
+
+//we create an object 
+const mathematics = { 
+//our object has two functions. 
+//function 1 = add. (because it's in an object, it's really method 1)
+    add: function(x, y) {
+        return x + y;
+    },
+//function 2= multiply. (because it's in an object, it's really method 2)
+    multiply: function(x,y) {
+        return x * y; 
+    }
+};
+//we then print out the results of our adder function 
+console.log(mathematics.add(5,6))//11
+//we then print out the results of our multiply function
+console.log(mathematics.multiply(5,6))//30
+
+//This is a nice way of grouping functions together, by putting them in an object. 
+//This puts them in a container, which is better than having a bunch of functions just floating around, we now have a math object with our functions in it. 
+//when we add a function is a property in a object, we call it a method. 
 /*
 Method Shorthand Syntax
 
