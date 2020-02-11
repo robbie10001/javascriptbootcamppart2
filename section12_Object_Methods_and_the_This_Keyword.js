@@ -298,11 +298,60 @@ const persons = {
 }
 persons.fullName()
 
-
 /*
 THIS: Invocation Context
 
+The value of THIS depends on the invocation context of the function it is used in. 
+
+We have seen two different values for THIS so far. 
+1. We have seen that in a regular old function, THIS refers to the global state.
+2. When we use THIS inside a method, its a way of accessing the parent object. The object the method is located in. 
+
+However, this is not always the case. The value of THIS depends on the inovcation context of the function its use in.
+This means, the value will change depending on how the function is actually executed. NOT JUST WHERE YOU WRITE IT. 
+It depends how we call it! 
+THIS is a bit of a shape shifter in some ways! 
+
+//generally, when we call the THIS method, we are going to be using the dot syntax. 
+
+//When we write an arrow function, arrow functions do not get there own version of THIS. 
+//the value of THIS is not going to change! 
+//generally, we don't write methods usings arrow functions! 
+
+
+//The value of THIS is not set in stone, soley based on where we write it.
+
 */ 
+console.log("----break----")
+
+
+
+const personality = {
+    first: "Bruce", 
+    last: "McClure", 
+    nickName: "Brucy Boy",
+    fullName(){
+//in a method, this refers to the object the method "lives" in:
+        const {
+            first, 
+            last, 
+            nickName
+        } = this;
+        console.log(`${first} ${last} AKA ${nickName}`);
+    },
+    printBio() {
+        console.log(this)
+        const fullName = this.fullName();
+        console.log(`${fullName} is a person!`)
+       
+    }
+}
+console.log(person.printBio)
+const printBio = person.printBio; 
+
+//
+
+
 
 
 /*
