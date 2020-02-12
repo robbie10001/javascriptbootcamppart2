@@ -1,139 +1,108 @@
+/*
+const suits = ["hearts", "diamonds", "spades", "clubs" ];
+const values = "1,2,3,4,5,6,7,8,9,10,J,Q,K,A"
+
+const mainDeck = makeDeck()
+function makeDeck() {
+    
+    const deck = [];
+    const suits = ["hearts", "diamonds", "spades", "clubs" ];
+    const values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
+    for (let value of values.split(",")) {
+        for (let suit of suits) {
+            deck.push({
+                value,
+                suit
+            })
+        }
+    }
+   console.log(deck.length) //52 //52
+    return deck;
+}
 
 
-//we create an object 
-const annoyer = {
-//within this object we have an array (phrases) which contain a number of different values.
-    phrases: ["literally", "cray cray", "I can't even", "Totes!", "YOLO", "Can't Stop, Won't Stop"],
-//within the parent object, we also create a method. 
-    pickPhrase() {
-//we use distructuring to get this.phrases as phrases. 
-        const {phrases} = this;
-//when then create a variable (idx) which goes through each element of our phrases object and picks one at random.
-        const idx = Math.floor(Math.random() * phrases.length);
-//we then console.log a random element of the phrases object. 
-        console.log(phrases[idx])//iteration 1: YOLO, //iteration 2: literally, //iteration 3: Can't stop won't stop
-        return (phrases[idx])
+function drawCard() {
+    return mainDeck.pop()
+    
+
+}
+
+const myDeck = makeDeck();// gives an array with 52 objects containing a value and a suit for each card. 
+const card1 = drawCard(myDeck); // {value: "A", suit: "clubs" }
+console.log(myDeck)
+
+makeDeck()
+*/
+
+
+const myDeck = {
+    deck: [],
+    drawnCards: [],
+    suits: ["hearts", "diamonds", "spades", "clubs" ],
+    values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
+    initializeDeck(){
+        const {
+            suits, 
+            values, 
+            deck
+        } = this;
+            for (let value of values.split(",")) {
+                for (let suit of suits) {
+                    deck.push({
+                        value,
+                        suit
+                    })
+                }
+            }
+        //return deck;
     },
-
-    start() {
-        console.log(this.pickPhrase())
-        setInterval(function() {
-            console.log("Not dry code!")//every three seconds,  "not dry code" is run in the console. 
-        }, 3000)
+    //this method removes a single card from our deck of cards. 
+    drawCard(){
+        const card = this.deck.pop()
+        this.drawnCards.push(card);
+        return card;
+    },
+    drawMultiple(numCards){
+        const cards = [];
+        for(let i = 0; i < numCards; i ++) {
+            cards.push(this.drawCard());
+        }
+        return cards
+    },
+    //WE define a method called shuffle.
+    shuffle() {
+        const {deck} = this;
+    //we then create a for loop and we loop through the array backwards. 
+//we start at the end of the array, and pick a random index before the end of the array and we swap the two. 
+//we are shuffling from the back moving towards the front.  
+        for (let i = deck.length - 1; i > 0; i--) {
+            //pick random index before current element
+            let j = Math.floor(Math.random() * (i + 1));
+            //swap
+            [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
     }
 }
 
-annoyer.pickPhrase()
-annoyer.start()
+myDeck.initializeDeck()
+myDeck.drawCard()
+myDeck.drawMultiple(6)
+myDeck.shuffle()
+const card1 = myDeck.drawCard() 
 
-
-/*
-const annoyers = {
-
-        phraser: ["literally", "cray cray", "I can't even", "Totes!", "YOLO", "Can't Stop, Won't Stop"],
-        pickPhraser() {
-            const {phraser} = this;
-            const idx = Math.floor(Math.random() * phraser.length);
-            console.log(phraser[idx])
-        },
-    
-        starter() {
-            setInterval(function() {
-  //HOWEVER, IF WE TRY AND CALL THIS.PICKPHRASE(), WITHIN OUR SETINTERVAL FUNCTION, EVERYTHING BREAKS! 
-  //WE GET A TYPEERROR: THIS.PICKPHRASE IS NOT A FUNCTION.
-  //This is because within our function the value of THIS is set globally!. 
-  //The question becomes, why in the previous example, THIS is set to the object, whereas within the setInterval function it is set globally?
-  //the answer is that THIS changes depends upon where its called! 
-
-  //we are executing starter  by ourselves as a method. annoyer.start()
-  //however, the setInterval function is not being called by us. Instead its is being called by setInterval itself every three seconds. 
-  //the meaning here is that THIS is set globally as a result! 
-  //All of this has been setup to talk about arrow functions. 
-                console.log(this.pickPhraser()) //typeerror: this.pickPhraser() is not a function! 
-            }, 3000)
-        }
-    };
-
-    annoyers.pickPhraser()
-    annoyers.starter()
-*/
-
-/*
-
-    const annoying = {
-
-        phrasing: ["literally", "cray cray", "I can't even", "Totes!", "YOLO", "Can't Stop, Won't Stop"],
-        pickPhrasing() {
-            const {phrasing} = this;
-            const idx = Math.floor(Math.random() * phrasing.length);
-            console.log(phrasing[idx])
-        },
-    
-        starting() {
-            setInterval(function() {
-  //HOWEVER, IF WE TRY AND CALL THIS.PICKPHRASE(), WITHIN OUR SETINTERVAL FUNCTION, EVERYTHING BREAKS! 
-  //WE GET A TYPEERROR: THIS.PICKPHRASE IS NOT A FUNCTION.
-  //This is because within our function the value of THIS is set globally!. 
-  //The question becomes, why in the previous example, THIS is set to the object, whereas within the setInterval function it is set globally?
-  //the answer is that THIS changes depends upon where its called! 
-
-  //we are executing start by ourselves as a method. annoyer.start()
-  //however, the setInterval function is not being called by us. Instead its is being called by setInterval itself every three seconds. 
-  //the meaning here is that THIS is set globally as a result! 
-  //All of this has been setup to talk about arrow functions. 
-                console.log(this.pickPhrase())
-            }, 3000)
-        }
-    };
-
-    annoying.pickPhrasing()
-    annoying.starting()
-
-*/
-console.log("USING ARROW FUNCTIONS")
-
-const annoys = {
-    //within this object we have an array (phrases) which contain a number of different values.
-        phrasess: ["literally", "cray cray", "I can't even", "Totes!", "YOLO", "Can't Stop, Won't Stop"],
-    //within the parent object, we also create a method. 
-        pickPhrases() {
-    //we use distructuring to get this.phrases as phrases. 
-            const {phrasess} = this;
-    //when then create a variable (idx) which goes through each element of our phrases object and picks one at random.
-            const idx = Math.floor(Math.random() * phrasess.length);
-    //we then console.log a random element of the phrases object. 
-            console.log(phrasess[idx])//iteration 1: YOLO, //iteration 2: literally, //iteration 3: Can't stop won't stop
-            return phrasess[idx]
-        },
-    
-        starts() {
-            console.log(this.pickPhrases())
-    //If we use an arrow function here, we avoid the problems we have been having fully! 
-    //arrow functions don't get their own THIS. The value of THIS in an arrow function will not change from that of its parent or it's closest THIS.
-    //Because of that fact, the THIS we get in our setInterval arrow function is the THIS we get from STARTS!
-    //Sometimes arrow functions are better to use because we don't want a new THIS! 
-    //The other side of this coin is that they suck as regular methods on an object because you don't get access to THIS referencing the object. It's reference is global
-            
-    //this.timerId now gives us a    added a new property called timerId to our annoyer object. 
-            this.timerId =setInterval(() => {
-                console.log("We the greatest!")//every three seconds,  "not dry code" is run in the console. 
-            }, 3000)
-        },
-        //we create another method. 
-        stop() {
-            //we call clearInteval which takes an id. Which we get from this.timerId
-            clearInterval(this.timerId)
-            console.log("THANK GOD IT'S OVER!")
-        }
-    }
-    
-    annoys.pickPhrases()
-    annoys.starts()
-    annoys.stop()
-
-
-
-
-
+console.log("===WHAT IS THE VALUE OF CARD 1===")
+console.log(card1)//{ value: '3', suit: 'diamonds' }
+console.log("===WHAT IS THE VALUE OF MY DECK AFTER POPING OFF A CARD?)
+console.log(myDeck.deck)//We now have 51 cards, in random order. 
+console.log("===HOW MANY CARDS DO I HAVE LEFT?")
+console.log(myDeck.deck.length)////44 cards left after we take our cards off and put into the other array.
+console.log("===WHAT IS THE VALUE OF MYDECK.DECKCARD()")
+console.log(myDeck.drawCard())//{ value: '4', suit: 'hearts' }
+console.log("===THE CARDS THAT WE HAVE DRAWN IN NEW ARRAY")
+console.log(myDeck.drawnCards)//{ value: 'A', suit: 'clubs' },{ value: 'A', suit: 'spades' },{ value: 'A', suit: 'diamonds' },{ value: 'A', suit: 'hearts' },{ value: 'K', suit: 'clubs' },{ value: 'K', suit: 'spades' },{ value: 'K', suit: 'diamonds' },{ value: '5', suit: 'spades' },{ value: '4', suit: 'hearts' }
+console.log("===WHAT ARE THE 6 CARDS THAT I'M DRAWING?")
+console.log(myDeck.drawMultiple(6))//[ { value: 'J', suit: 'clubs' },{ value: '6', suit: 'hearts' },{ value: '8', suit: 'spades' },{ value: '4', suit: 'clubs' },{ value: '10', suit: 'spades' },{ value: '9', suit: 'spades' } ]
+console.log("HAVE WE SHUFFLED OUR CARDS?")
+console.log(myDeck)//All of our cards have now been shuffled! 
 
 
