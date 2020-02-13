@@ -1,6 +1,5 @@
 
-/*
-####INTRODUCTION TO THE DOM
+#### INTRODUCTION TO THE DOM
 
 #####The DOM stands for Document Object Model (DOM)
 
@@ -21,7 +20,7 @@ Javascript and the DOM in very exciting stuff.
 This is where we start to take HTML and CSS and play with it using javascript. 
 
 
-#####TASTE OF THE DOM- DOCuMENT OBJECT MODEL 
+##### TASTE OF THE DOM- DOCuMENT OBJECT MODEL 
 
 The DOM (Document Object Model), is a JavaScript representation of a webpage.
 It's your JS "window into the contents of a webpage"
@@ -93,26 +92,23 @@ In the below example, we are able to get all the central elements of google and 
 ![GIF](gifs/googleelement.gif)
 
 
+##### THE DOCUMENT OBJECT
 
 
 
-#####THE DOCUMENT OBJECT
+##### getElementById
 
 
 
-#####getElementById
-
-
-
-#####getElementsByTagName
+##### getElementsByTagName
 
 
 
 
-#####getElementsByClassName
+##### getElementsByClassName
 
 
 
-#####querySelector & querySelectorAll 
+##### querySelector & querySelectorAll 
 
 
