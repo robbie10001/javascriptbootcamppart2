@@ -96,7 +96,7 @@ In the below example, we are able to get all the central elements of google and 
 
 The DOM stands for DOCUMENT OBJECT MODEL. The DOM is just a representation of an actually document, made with a bunch of objects and they are assembled into a tree. 
 
-![image](images/section13_DOMtree.png)
+![image](images/section13_domtree.png)
 
 There is a hierarchy within the tree. The elements are not just setting there on the same level or in a random order. 
 
