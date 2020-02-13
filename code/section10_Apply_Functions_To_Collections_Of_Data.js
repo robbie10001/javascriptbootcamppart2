@@ -58,14 +58,12 @@ didgets.forEach(function(i){
 
 
 })
-console.log("------break------")
 
 function getMeTriples(n) {
     console.log(n * 3)
 }
 console.log(numberz.forEach(getMeTriples));//27, 24, 21, 18, 15, 12, 9, 6, 3, undefined. 
 
-console.log("--------break--------")
 
 const books = [{
     title: "good omens",
@@ -169,11 +167,8 @@ paranthesis ae option if they's only one argument.
 We use empty paranethisis if we have a function with no arguments. 
 
 */ 
-//we define a function 
-//we use the equal sign.
-//we pass in our paramater. 
-//we then make a  fat arrow
-//we then pass in our argument. 
+//we define a function, we use the equal sign, we pass in our paramater,
+//we then make a  fat arrow, we then pass in our argument. 
 const squarerer = (x) => {
     return x * x; 
 }
@@ -185,7 +180,7 @@ const sumers = (x, y) => {
 const squarerered = x => {
     return x * x; 
 }
-//if we have no paramaters 
+//if we have no paramatersarr 
 const squarerereded = () => {
     return x * x; 
 }
@@ -197,10 +192,13 @@ There is an even more compact way to write arrow functions.
 This is through implicit return 
 Arrow functions are just a shorter version of a regular function expression. 
 They are just more compact, even though they have the same functionality. 
-*/ 
-//ALL THESE FUNCTIONS DO EXACTLY THE SAME THING JUST WITH DIFFERENT SYNTAX. 
 
-/*
+ALL THESE FUNCTIONS DO EXACTLY THE SAME THING JUST WITH DIFFERENT SYNTAX.
+
+*/ 
+ 
+
+
 
 //REGULAR FUNCTION EXPRESSION
 const isEven = function (num) {
@@ -240,7 +238,7 @@ const doubles2 = nums.map(n => {
 
 const doubles3 = nums.map(n => n * 2);
 
-*/
+
 
 
 /*

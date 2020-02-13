@@ -36,7 +36,7 @@ It is our portal into the world of JAVASCRIPT. So we can write JS to figure out 
 
  When our website loads-up, the broswer turns it into a bunch of OBJECTS.
 
- ![images](/images/Section13_TasteoftheDOM.png)
+ ![images](/images/section13/Section13_TasteoftheDOM.png)
 
  Just  JS objects, and these objects are all constructed and put together to form the DOM. 
  It is a virtual representation (or a js representation) of the content of a page, and consists of a bunch of JS objects. 
@@ -44,7 +44,7 @@ It is our portal into the world of JAVASCRIPT. So we can write JS to figure out 
  HTML + CSS and some other stuff go in, and the browser interpreats it and reads it and creates the DOM for us. 
  It spits our JS objects, representing the HTML, CSS and other stuff. 
 
-![image](/images/Section13_TasteoftheDOMpart2.png)
+![image](/images/section13/Section13_TasteoftheDOMpart2.png)
 
 If we had a page of simple HTML, the browser will read it, on its own its just text, 
 the browser interpreates and interpreats it into a way that is understandable to humans. 
@@ -73,11 +73,11 @@ Through our console, we can go to sources and create a new code snippet. We can 
 
 In this example, we have uploaded an image from unsplash, that moves around the page to another random spot every two seconds. 
 
-![GIF](gifs/checkingelementsinthedom.gif)
+![GIF](gifs/section13/checkingelementsinthedom.gif)
 
 The code for this, does the same thing as the gif, but it doesn't jump and moves more across the screen smoothly. 
 
-![images](images/section13_movingimage.png)
+![images](images/section13/section13_movingimage.png)
 
 We are already seeing a bunch of cool features we can use in the DOM! 
 
@@ -87,9 +87,9 @@ The purpose of all of this is to show us that we can select things, and play wit
 
 In the below example, we are able to get all the central elements of google and make them all act crazy using the following code! 
 
-![images](images/Section13_movingallelementsofgoogle.png)
+![images](images/section13/Section13_movingallelementsofgoogle.png)
 
-![GIF](gifs/googleelement.gif)
+![GIF](gifs/section13/googleelement.gif)
 
 
 ### THE DOCUMENT OBJECT
@@ -107,7 +107,7 @@ document is an object that we have in every browser window that we open.
 
 The document contains heaps of properties and methods this is really where we start with everything. All the other pieces of the DOM are located within the document somewhere. It is all nested. 
 
-![image](images/domtree.png)
+![image](images/section13/domtree.png)
 
 it is always, 
 
@@ -127,7 +127,7 @@ The document is the entry point we use to access the DOM to manipulate things, t
 
 We can access a hold bunch of stuff through the DOM and by accessing the children of document element. Here are some examples from my old portfolio website. 
 
-![image](images/section13_DOMportfolio.png)
+![image](images/section13/section13_DOMportfolio.png)
 
 THE DOCUMENT IS THE ENTRY POINT! THIS IS WAY WE ALMOST ALWAYS START WITH DOCUMENT DOT SOMETHING! 
 
@@ -163,7 +163,7 @@ we can print these properties using the following code.
 
 console.dir(bear-photo)
 
-![image](images/section13_getobject.png)
+![image](images/section13/section13_getobject.png)
 
 When we call document.getElementById("pass in a string"), only if there is a match for that ID, we get that element back as an object, the DOM representation of that element, in our case an image. 
 
@@ -182,7 +182,7 @@ In our example, we get three inputs elements returned. It looks like an array at
 
 HTMLinputElement
 
-![GIF](gifs/getElementsByTagName.gif)
+![GIF](gifs/section13/getElementsByTagName.gif)
 
 A HTMLCollection, is a collection of objects. It's a type of collection you often get from the DOM. It's not an array, although we can do arrayish things on them. We can also iterate using it. It's a very light weight structure. 
 
@@ -198,13 +198,13 @@ document.getElementsByClassName("ClassName")
 
 This will return to us, all the elements that share that class name. 
 
-![image](images/getElementsByClassName.png)
+![image](images/section13/getElementsByClassName.png)
 
 If we try and get a class that doesn't exist, we will get an empty HTMLCollection[]
 
 We don't also just have to call elements based on the document. If we wanted to select one element and search a child element within that element, we could do that in the following way. 
 
-![image](images/getElementsByClassName2.png)
+![image](images/section13/getElementsByClassName2.png)
 
 In the above example, we get our elements that have a tag name of "ul" and take the first element from that collection [0]. Which we save to a variable called "ul". When then use this variable, which is an object, which has its own copy of getElementsByClassName. So we can search for class names within our ul variable. This then returns the only elements that contain the class "special" within our "ul" variable. 
 
@@ -220,7 +220,7 @@ We can select an element using the element type ("h1");
 We can select an id using a hash ("#red");
 We can select a class using a dot. (".big");
 
-![image](images/queryselector.png)
+![image](images/section13/queryselector.png)
 
 querySelector, is relatively new. It seems like it is all you would ever need and it can be used for everything, and is supported by all modern browsers. 
 
@@ -231,7 +231,7 @@ There are two types of query selectors.
 
 querySelectorAll does the same thing but returns a collection, whereas querySelector returns a single element at most. 
 
-![image](images/queryselector2.png)
+![image](images/section13/queryselector2.png)
 
 both our variables main1 and main2 return to us an object this is a HTMLParagraphElement. They both give us the same thing in this case, it's just a different way of selecting. 
 
@@ -243,4 +243,4 @@ We can also select based of attributes. For example, if we wanted to access the 
 
 querySelectorAll allows us to choose multiple elements. 
 
-![image](images/queryselector3.png)
+![image](images/section13/queryselector3.png)
