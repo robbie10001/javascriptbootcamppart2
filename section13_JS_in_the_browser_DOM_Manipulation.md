@@ -210,7 +210,58 @@ In the above example, we get our elements that have a tag name of "ul" and take 
 
 This will not work with getElementWithId, because IDs are supported to be individual. 
 
-
 ##### querySelector & querySelectorAll 
+
+While the above three methods are cool, there is a fourth that rules them all. 
+
+This is the querySelector. It is like the swiss army knife of DOM selectors. It can replicate all the functionality of all the selectors we have look at. The way it works is that we pass in a CSS style selector. 
+
+We can select an element using the element type ("h1");
+We can select an id using a hash ("#red");
+We can select a class using a dot. (".big");
+
+![image](images/queryselector.png)
+
+querySelector, is relatively new. It seems like it is all you would ever need and it can be used for everything, and is supported by all modern browsers. 
+
+There are two types of query selectors.
+
+1. querySelector 
+2. querySelectorAll 
+
+querySelectorAll does the same thing but returns a collection, whereas querySelector returns a single element at most. 
+
+![image](images/queryselector2.png)
+
+both our variables main1 and main2 return to us an object this is a HTMLParagraphElement. They both give us the same thing in this case, it's just a different way of selecting. 
+
+If we wanted to use a querySelector in order to return a specific class, we may need to be more specific. We are able to give more information within our querySelector which enables us find the specific elements we are looking for. 
+
+In this example, we have used the body, section, ul, li, class properties in order to specify which exact instance of the .special class we are trying to select. 
+
+We can also select based of attributes. For example, if we wanted to access the second element of an input field we could pass in the type of input we are looking for. 
+
+querySelectorAll allows us to choose multiple elements. 
+
+![image](images/queryselector3.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
