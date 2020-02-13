@@ -1,7 +1,7 @@
 
-#### INTRODUCTION TO THE DOM
+## INTRODUCTION TO THE DOM
 
-##### The DOM stands for Document Object Model (DOM)
+### The DOM stands for Document Object Model (DOM)
 
 Through the DOM we connect Javascript to HTML and CSS. 
 This is where JS becomes more visual and we can make stuff that we can actually see! 
@@ -20,7 +20,7 @@ Javascript and the DOM in very exciting stuff.
 This is where we start to take HTML and CSS and play with it using javascript. 
 
 
-##### TASTE OF THE DOM- DOCUMENT OBJECT MODEL 
+### TASTE OF THE DOM- DOCUMENT OBJECT MODEL 
 
 The DOM (Document Object Model), is a JavaScript representation of a webpage.
 It's your JS "window into the contents of a webpage"
@@ -64,7 +64,7 @@ This usability is all achieved through JS where we are able to interact with the
 We can select and interact with these objects, we can change them in JavaScript. 
 When we change an element in the DOM using JS, there is an impact that we can see, on our webpages. 
 
-##### ANOTHER FUN DOM EXAMPLE 
+### ANOTHER FUN DOM EXAMPLE 
 
 We are going to play around with the home page of google. We are going to take every element from the screen, and animate it around randomly.
 This is to show us the we can do things like change style, move things around, and animate them. 
@@ -92,7 +92,7 @@ In the below example, we are able to get all the central elements of google and 
 ![GIF](gifs/googleelement.gif)
 
 
-##### THE DOCUMENT OBJECT
+### THE DOCUMENT OBJECT
 
 The DOM stands for DOCUMENT OBJECT MODEL. The DOM is just a representation of an actually document, made with a bunch of objects and they are assembled into a tree. 
 
@@ -132,7 +132,7 @@ We can access a hold bunch of stuff through the DOM and by accessing the childre
 THE DOCUMENT IS THE ENTRY POINT! THIS IS WAY WE ALMOST ALWAYS START WITH DOCUMENT DOT SOMETHING! 
 
 
-##### getElementById
+### getElementById
 
 We are going to start looking at some of the most important methods we have access to in the DOM. 
 
@@ -174,7 +174,7 @@ There are also different categories of elements within our pages. These are diff
 HTMLimageElement
 HTMLparagraphElement 
 
-##### getElementsByTagName
+### getElementsByTagName
 
 We select by a type of element. For example all the h1 on a page or all the images, or paragraphs on a page. With getElementsByTagName we could potentially get more than one element, depending on how many of these elements our page contains. These returned elements will be stored in a list.
 
@@ -190,7 +190,7 @@ Since our HTML collections are iterable we can use the spread operator ...
 
 At the end of the day, we end up looping over elements most often. 
 
-##### getElementsByClassName
+### getElementsByClassName
 
 We use a lot of classes when we use CSS. In order to get access to these elements we call 
 
@@ -210,7 +210,7 @@ In the above example, we get our elements that have a tag name of "ul" and take 
 
 This will not work with getElementWithId, because IDs are supported to be individual. 
 
-##### querySelector & querySelectorAll 
+### querySelector & querySelectorAll 
 
 While the above three methods are cool, there is a fourth that rules them all. 
 
@@ -244,24 +244,3 @@ We can also select based of attributes. For example, if we wanted to access the 
 querySelectorAll allows us to choose multiple elements. 
 
 ![image](images/queryselector3.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
