@@ -65,7 +65,6 @@ This usability is all achieved through JS where we are able to interact with the
 We can select and interact with these objects, we can change them in JavaScript. 
 When we change an element in the DOM using JS, there is an impact that we can see, on our webpages. 
 
-
 ##### ANOTHER FUN DOM EXAMPLE 
 
 We are going to play around with the home page of google. We are going to take every element from the screen, and animate it around randomly.
@@ -79,7 +78,19 @@ In this example, we have uploaded an image from unsplash, that moves around the 
 
 The code for this, does the same thing as the gif, but it doesn't jump and moves more across the screen smoothly. 
 
+![images](images/section13_movingimage.png)
 
+We are already seeing a bunch of cool features we can use in the DOM! 
+
+We can use this same logic to move every element on our screen! There are a number of ways to achieve this result. 
+
+The purpose of all of this is to show us that we can select things, and play with them. These principles apply to everything we can do. We can interact with a form, get the value out, change an image source, add events, pick random things and mess with them, we can add new styles to a style sheet, we can do heaps! 
+
+In the below example, we are able to get all the central elements of google and make them all act crazy using the following code! 
+
+![images](images/Section13_movingallelementsofgoogle.png)
+
+![GIF](gifs/googleelement.gif)
 
 
 
