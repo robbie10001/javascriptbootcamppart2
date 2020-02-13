@@ -103,8 +103,6 @@ In every tree there is a top most branch which is called the root of the tree.
 
 Which when we work with the DOM is called document. 
 
-
-
 document is an object that we have in every browser window that we open. 
 
 The document contains heaps of properties and methods this is really where we start with everything. All the other pieces of the DOM are located within the document somewhere. It is all nested. 
@@ -136,9 +134,61 @@ THE DOCUMENT IS THE ENTRY POINT! THIS IS WAY WE ALMOST ALWAYS START WITH DOCUMEN
 
 ##### getElementById
 
+We are going to start looking at some of the most important methods we have access to in the DOM. 
 
+Selecting is very important in the DOM manipulation process. 
+
+Typically, we select an element or multiple elements, and do something with them. 
+
+When we want to add events and interactivties, we start with selecting.
+There is a bunch of different ways to do this using the document. 
+
+The first couple of ways we can select is using the following methods.
+
+getElementByID
+getElementbyTagName
+getElementbyClassName 
+
+getElementByID is a method on the document, we therefore call it the following way.
+
+document.getElementByID
+
+This method, takes an ID and finds the matching element that contains that id and returns that object.  
+
+IF WE TYPE JUST document.getElementById("bear-photo") WE ARE RETURNED WITH JUST THE HTML FOR THAT CODE. 
+
+However, if we store document.getElementById("bear-photo") into a variable we are able to see all the properties that exist for our photo. 
+
+we can print these properties using the following code. 
+
+console.dir(bear-photo)
+
+![image](images/section13_getobject.png)
+
+When we call document.getElementById("pass in a string"), only if there is a match for that ID, we get that element back as an object, the DOM representation of that element, in our case an image. 
+
+We will only ever get one element back, and if we pass in an invalid ID, we will recieve null. 
+
+There are also different categories of elements within our pages. These are different patterns for these objects. For example, 
+
+HTMLimageElement
+HTMLparagraphElement 
 
 ##### getElementsByTagName
+
+We select by a type of element. For example all the h1 on a page or all the images, or paragraphs on a page. With getElementsByTagName we could potentially get more than one element, depending on how many of these elements our page contains. These returned elements will be stored in a list.
+
+In our example, we get three inputs elements returned. It looks like an array at first, but its not. Each one of these elements is a DOM object. 
+
+HTMLinputElement
+
+![GIF](gifs/getElementsByTagName.gif)
+
+A HTMLCollection, is a collection of objects. It's a type of collection you often get from the DOM. It's not an array, although we can do arrayish things on them. We can also iterate using it. It's a very light weight structure. 
+
+Since our HTML collections are iterable we can use the spread operator ...
+
+At the end of the day, we end up looping over elements most often. 
 
 
 
