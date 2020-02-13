@@ -79,6 +79,8 @@ if compareFunction(a, b) returnsreturns greater than 0- sort b before a
 
 ### REDUCE INTRO
 
+![image](images/section10/section10reduce.png)
+
 Reduce is a build in array method, we pass a call back to it, let we have done with all our other array methods. 
 
 Reduce is a bit different. It is very useful and versitile, although it's a little tricky to explain. Reduce is something i need to practice in order to get good at it. 

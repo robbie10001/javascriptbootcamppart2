@@ -223,11 +223,13 @@ REST PARAMETERS
 Rest is ... but we put it in the paramatter list of a function. 
 It collects all remaining arguments into an array. 
 
-*/ 
-//USING REST. 
+USING REST. 
 
-//1. we use ...
-//2. we use a name. This will be the name of the array which holds all our arguments.
+1. we use ...
+2. we use a name. This will be the name of the array which holds all our arguments.
+
+
+*/ 
 
 function sumer(...nums){
     console.log(nums); 
