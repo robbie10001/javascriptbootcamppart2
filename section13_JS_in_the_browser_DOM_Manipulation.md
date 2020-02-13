@@ -190,11 +190,25 @@ Since our HTML collections are iterable we can use the spread operator ...
 
 At the end of the day, we end up looping over elements most often. 
 
-
-
-
 ##### getElementsByClassName
 
+We use a lot of classes when we use CSS. In order to get access to these elements we call 
+
+document.getElementsByClassName("ClassName")
+
+This will return to us, all the elements that share that class name. 
+
+![image](images/getElementsByClassName.png)
+
+If we try and get a class that doesn't exist, we will get an empty HTMLCollection[]
+
+We don't also just have to call elements based on the document. If we wanted to select one element and search a child element within that element, we could do that in the following way. 
+
+![image](images/getElementsByClassName2.png)
+
+In the above example, we get our elements that have a tag name of "ul" and take the first element from that collection [0]. Which we save to a variable called "ul". When then use this variable, which is an object, which has its own copy of getElementsByClassName. So we can search for class names within our ul variable. This then returns the only elements that contain the class "special" within our "ul" variable. 
+
+This will not work with getElementWithId, because IDs are supported to be individual. 
 
 
 ##### querySelector & querySelectorAll 
