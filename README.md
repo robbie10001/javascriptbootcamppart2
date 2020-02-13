@@ -57,7 +57,7 @@ The goal of this project is to create a library of Javascript concepts and ideas
 ##### getElementsByClassName
 ##### querySelector & querySelectorAll 
 
-### Section 14 
+### Section 14- Twisting the DOM to Our Will
 
 
 ##### Working With InnerText & textContent
