@@ -103,11 +103,13 @@ In every tree there is a top most branch which is called the root of the tree.
 
 Which when we work with the DOM is called document. 
 
-![image](images/section13_domtree.png)
+
 
 document is an object that we have in every browser window that we open. 
 
 The document contains heaps of properties and methods this is really where we start with everything. All the other pieces of the DOM are located within the document somewhere. It is all nested. 
+
+![image](images/domtree.png)
 
 it is always, 
 
