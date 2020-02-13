@@ -1,7 +1,7 @@
 
 #### INTRODUCTION TO THE DOM
 
-#####The DOM stands for Document Object Model (DOM)
+##### The DOM stands for Document Object Model (DOM)
 
 Through the DOM we connect Javascript to HTML and CSS. 
 This is where JS becomes more visual and we can make stuff that we can actually see! 
@@ -20,7 +20,7 @@ Javascript and the DOM in very exciting stuff.
 This is where we start to take HTML and CSS and play with it using javascript. 
 
 
-##### TASTE OF THE DOM- DOCuMENT OBJECT MODEL 
+##### TASTE OF THE DOM- DOCUMENT OBJECT MODEL 
 
 The DOM (Document Object Model), is a JavaScript representation of a webpage.
 It's your JS "window into the contents of a webpage"
