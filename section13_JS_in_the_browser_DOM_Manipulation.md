@@ -94,6 +94,41 @@ In the below example, we are able to get all the central elements of google and 
 
 ##### THE DOCUMENT OBJECT
 
+The DOM stands for DOCUMENT OBJECT MODEL. The DOM is just a representation of an actually document, made with a bunch of objects and they are assembled into a tree. 
+
+![image](images/section13_DOMtree.png)
+
+There is a hierarchy within the tree. The elements are not just setting there on the same level or in a random order. 
+
+In every tree there is a top most branch which is called the root of the tree. 
+
+Which when we work with the DOM is called document. 
+
+document is an object that we have in every browser window that we open. 
+
+The document contains heaps of properties and methods this is really where we start with everything. All the other pieces of the DOM are located within the document somewhere. It is all nested. 
+
+it is always, 
+
+document.(something)
+
+for example, 
+
+document.images (this shows the 5 images i have on my page), we can also keep adding on dot notation to get more information. For example, 
+
+document.images.(something)
+
+document.all returns all of our HTMLCollection(48 items)
+
+document.all.1 (returns the information within the head of my html document)
+
+The document is the entry point we use to access the DOM to manipulate things, to view content, but also add events and functionality its all located within the DOM. It's all created automatically, when a page is rendered within the browser. 
+
+We can access a hold bunch of stuff through the DOM and by accessing the children of document element. Here are some examples from my old portfolio website. 
+
+![image](images/section13_DOMportfolio.png)
+
+THE DOCUMENT IS THE ENTRY POINT! THIS IS WAY WE ALMOST ALWAYS START WITH DOCUMENT DOT SOMETHING! 
 
 
 ##### getElementById

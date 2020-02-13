@@ -43,11 +43,39 @@ for(let elements of allElements) {
     }
 }, 2000)
 
+const myImg = document.createElement("Img"); 
+myImg.src = "https://images.unsplash.com/photo-1452441271666-5d998aa2f6cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
+
+myImg.style.width = "200px"; 
+document.body.append(myImg); 
+myImg.style.transition = "all 2s"; 
+
+const sheet = new CSSStyleSheet(); 
+sheet.replaceSync(`* {transition: all 2s}`);
+document.adoptedStyleSheets = [sheet]; 
+
+const allElements = document.body.children;
+
+ 
+setInterval(() => {
+    for(let elements of allElements) { 
+        const rotation = Math.floor(Math.random() * 360);
+        const x = Math.floor(document.body.clientWidth * Math.random())
+        const y = Math.floor(document.body.clientHeight * Math.random())
+        elements.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`; 
+    }
+}, 2000)
+
+//getElementById("viewport")
 
 
 
 /*
 THE DOCUMENT OBJECT
+
+The DOM stands for DOCUMENT OBJECT MODEL. The DOM is just a representation of an actually document, made with a bunch of objects 
+
+
 
 
 */ 
@@ -78,39 +106,6 @@ querySelector & querySelectorAll
 
 
 */ 
-
-
-
-const myImg = document.createElement("Img"); 
-myImg.src = "https://images.unsplash.com/photo-1452441271666-5d998aa2f6cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
-
-myImg.style.width = "200px"; 
-document.body.append(myImg); 
-myImg.style.transition = "all 2s"; 
-
-const sheet = new CSSStyleSheet(); 
-sheet.replaceSync(`* {transition: all 2s}`);
-document.adoptedStyleSheets = [sheet]; 
-
-const allElements = document.body.children;
-
- 
-setInterval(() => {
-    for(let elements of allElements) { 
-        const rotation = Math.floor(Math.random() * 360);
-        const x = Math.floor(document.body.clientWidth * Math.random())
-        const y = Math.floor(document.body.clientHeight * Math.random())
-        elements.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`; 
-    }
-}, 2000)
-
-
-
-//getElementById("viewport")
-
-
-
-
 
 
 
