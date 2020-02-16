@@ -19,21 +19,24 @@ In this video, we are going talk about access text from an element. How do we ge
 
 When we use innerText on an element, we get all of the text inside of it. 
 
-![images](/images/section14/innerText.png)
+
 
 It doesn't matter how many elements deep it is, or nested, it takes out all the text. 
 
-![images](/images/section14/innerText2.png)
+![images](/images/section14/innerText.png)
+
 
 We can change our text, it's just another property on an object, and if we change it, the browser is going to update to reflex that. 
 
-![GIF](gifs/section14/imhungry.gif)
+![images](images/section14/innerText2.png)
 
 Now this change is obivously only in the console. However, we could add it to a script and then it would run each time and we would see it. 
 
 It is kind of silly to update the contents of a H1 whenever a new page loads. Why not just update the html? 
 
 This is where events come in, in which we want to change information based on some sort of event taking place (a click or a hover for example). When can use innerText, when we want to update a heading for example. 
+
+![GIF](gifs/section14/imhungry.gif)
 
 #### textContent 
 
