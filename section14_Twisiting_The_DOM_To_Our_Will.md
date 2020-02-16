@@ -19,12 +19,9 @@ In this video, we are going talk about access text from an element. How do we ge
 
 When we use innerText on an element, we get all of the text inside of it. 
 
-
-
 It doesn't matter how many elements deep it is, or nested, it takes out all the text. 
 
 ![images](images/section14/text.png)
-
 
 We can change our text, it's just another property on an object, and if we change it, the browser is going to update to reflex that. 
 
@@ -43,11 +40,31 @@ On the surface, textContent seems the same as InnerText. They seem identical.
 
 However this is not the case, if look at innerText, we are given just the text of our HTML, there is not formatting, we don't get information about our script. Its just the text. 
 
-Howevever, if we put in p.textContent, we get the text, the formatting and it returns the text from our script.  Also, if we had something that was hidden within the paragraph, we can see it using textContent. 
+Howevever, if we put in p.textContent, we get the text, the formatting and it returns the tefxt from our script.  Also, if we had something that was hidden within the paragraph, we can see it using textContent. 
 
 ![images](/images/section14/textContent.png)
 
 ### InnerHTML
+
+Is going to retrieve, not only the text inside an element, but also all other tags within a given element.
+
+For example, if we selected a form: 
+
+form.InnerHTML we would recieve, all the elements contained within that form as a string.  
+
+We get everything from one tag to another tag. 
+
+
+![GIF](gifs/section14/forminnerhtml.gif)
+
+If user InnerHTML, we get all of the content within our search paramaters. This is very different to our innerText works. We are given the html syntax, any css and so on when we use InnerHTML
+
+![images](/images/section14/innerhtmlinnertext.png)
+
+
+We can use innerHTML, 
+
+
 
 
 
