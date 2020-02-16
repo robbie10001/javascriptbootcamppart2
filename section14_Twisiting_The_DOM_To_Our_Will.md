@@ -62,8 +62,23 @@ If user InnerHTML, we get all of the content within our search paramaters. This 
 ![images](/images/section14/innerhtmlinnertext.png)
 
 
-We can use innerHTML, 
+We can use innerHTML, to change the contents between our two tags if we wanted to. We can also had HTML elements im using innerHTML as a string. 
 
+InnerText, textContent, innerHTML, all these methods return strings. 
+
+If we don't wanted to completely overide what elements we have in our DOM currently, we can use += to add other elements in. It is not that often that we would use this, but we can. 
+
+There is also a difference between innerHTML and innerText when we set them. We have already seen the difference when we retrieve them. 
+
+![images](/images/section14/innertext.png)
+
+If we wanted to add a tag into our H1 tag (My Webpage) and we used innerText, they would not be read as a new element. Instead they would be seen as new text. Whereas, if we used innerHTML, it would be understood that this is a new tag and would be rendered the way we would like. 
+
+![images](/images/section14/textinner.png)
+
+If we are trying to add an element we need to use innerHTML.
+
+With innerText, we cannot actually add new elements. 
 
 
 
