@@ -23,7 +23,7 @@ When we use innerText on an element, we get all of the text inside of it.
 
 It doesn't matter how many elements deep it is, or nested, it takes out all the text. 
 
-![images](images/section14/innerTexted.png)
+![images](images/section14/text.png)
 
 
 We can change our text, it's just another property on an object, and if we change it, the browser is going to update to reflex that. 
