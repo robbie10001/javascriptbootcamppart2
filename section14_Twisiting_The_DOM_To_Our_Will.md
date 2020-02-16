@@ -112,7 +112,26 @@ We have these different attributes that we can access directly through the DOM.
 
 ### Getting & Setting Attributes 
 
+We are going to look at two methods in this section.
 
+1. getAttribute()
+2. setAttribute()
+
+They do exactly what they sounds like. They allows us to access or to change, the value of attributes on elements. 
+
+We have seen a couple of shorthand ways to access attributes, but there are others that done have shorthand methods so we use getAttribute() and setAttribute(). 
+
+With getAttribute(), we pass in the attribute we are looking for on the element we are calling it on and it gives us the value. If we look for a value that doesn't exist we get null. 
+
+![images](/images/section14/getattribute.png)
+
+The other method we can use is setAttribute.If our example, range.setAttribute takes two arguments. The thing we are trying to set, and the value we are assigning to it.  
+
+![images](/images/section14/setattribute.png)
+
+setAttribute allows us to change the value of our attributes. We will use setAttribute often. We can also use setAttribute to change the type of our input for example. In these way, it's quite powerful. 
+
+If there is ever an attribute you want to update or get access to, getattribute() and setattribute() our our methods. 
 
 ### Finding parent/children/siblings
 
