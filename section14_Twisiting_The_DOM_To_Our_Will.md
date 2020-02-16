@@ -28,7 +28,7 @@ It doesn't matter how many elements deep it is, or nested, it takes out all the 
 
 We can change our text, it's just another property on an object, and if we change it, the browser is going to update to reflex that. 
 
-![images](images/section14/innerText2.png)
+![images](images/section14/innerTexting.png)
 
 Now this change is obivously only in the console. However, we could add it to a script and then it would run each time and we would see it. 
 
