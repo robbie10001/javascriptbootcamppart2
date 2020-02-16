@@ -35,7 +35,7 @@ It is kind of silly to update the contents of a H1 whenever a new page loads. Wh
 
 This is where events come in, in which we want to change information based on some sort of event taking place (a click or a hover for example). When can use innerText, when we want to update a heading for example. 
 
-![GIF](gifs/section14/imhungry.gif)
+![GIF](gifs/section14/imHungry.gif)
 
 #### textContent 
 
