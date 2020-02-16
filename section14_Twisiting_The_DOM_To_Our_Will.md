@@ -80,12 +80,35 @@ If we are trying to add an element we need to use innerHTML.
 
 With innerText, we cannot actually add new elements. 
 
-
-
-
 ### value, src, href, and more
 
+These properties are grouped together as we can directly, access on individual elements. 
 
+#### Value 
+
+When we have a form and we want to retrieve the text input or some value from within the form, we have an attribute that allows us to achieve this. This attribute is value. 
+
+value is how we can get the value out of a form. 
+
+Usually, the way that we change input value, is to reset it to an empty string. This is like a search bar. Once you type it in an press enter, some new stuff loads, and you are taken to a new page, but then the search bar becomes empty again. 
+
+![images](/images/section14/value.png)
+
+That is value and checked, we also have direct access to placeholder. We can change placeholder directly, although this is not that common. This is how we can work with inputs. 
+
+#### href 
+
+The href tag allows us to link of our images, and also change the links that we have within our page. 
+
+![images](/images/section14/href.png)
+
+### src 
+
+If we wanted to change our image we could do so through altering our images sources! 
+
+![GIF](/gifs/section14/src.gif)
+
+We have these different attributes that we can access directly through the DOM. 
 
 ### Getting & Setting Attributes 
 
