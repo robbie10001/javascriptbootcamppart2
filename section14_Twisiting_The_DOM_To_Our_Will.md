@@ -135,7 +135,26 @@ If there is ever an attribute you want to update or get access to, getattribute(
 
 ### Finding parent/children/siblings
 
+In the section we will be looking at ways to access th parent, children, sibiling elements. This allows us to access elements that are close in scope to each other. This is particularly useful when we are dealing with events. 
 
+For example, a user my click something, and based off that click, we would have an element selected and we want to then select some other element based of this other element. 
+
+#### Parent 
+
+![images](/images/section14/parentElement.png)
+
+We can use our parent elements to work backwards, back up the tree, and find a parent element from any given element. 
+
+
+#### Children 
+
+This is the opposite of parent, it allows us to work downwards through our tree. We are able to find the child elements of any given element that we have selected. 
+
+![images](/images/section14/children.png)
+
+#### Siblings 
+
+![images](/images/section14/nextsibling.png)
 
 ### Changing multiple elements 
 
