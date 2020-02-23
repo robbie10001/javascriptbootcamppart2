@@ -218,12 +218,17 @@ This returns to us an object, called a CSS style declaration, and if we open it 
 
 ![images](/images/section14/getComputed.png)
 
-
-
-
-
 ### Manipulating Classes
 
+Here we are going to see a much better way for us to add multiple styles at once. 
+
+Imagine that we want to apply radical changes to our elements. The best way to achieve this is through the use of classes. 
+
+We define our classes within our CSS folders, using . (dot) notation. Within our class, we input the properties that we want to exist within that class. 
+
+The best approach to do this is to use the classList property. Class list is an object representation, a DOM token list, and it contains the classes that exist on a given element. Not only does it provide a way for us to view these classes, the classList property has methods attached to it that allows us to change things. 
+
+![GIF](/gifs/section14/classes.gif)
 
 
 
