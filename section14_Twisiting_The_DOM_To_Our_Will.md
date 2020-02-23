@@ -161,7 +161,25 @@ By accessing sibling elements, we are able to access elements that share a paren
 
 ### Changing multiple elements 
 
+In this section, we are going to talk about how we can use, what we have already learn't on multiple elements. Everything we have done so far has been one element at a time. 
 
+However, often we want to affect changes on multiple elements. 
+
+And we already know how to select multiple elements. We can use querySelectorAll, getElementsByClassName, getElementsByTagName. These methods give us an array like object, so all we need to do is iterate through this object, and change whatever property that we want. 
+
+Firstly,  we have created a new script, that will run once our file runs. Secondly, we delcare a variable and assign to it all the values in our HTML that contain the "li" property. We when create a loop and console.log our the results of all innerText within our pages li properties. 
+
+![GIF](/gifs/section14/multipleelements.gif)
+
+If we want to change the value of all of these li elements we can do the follow within our loop. 
+
+allList[i].innerText = "We are the Champions". 
+
+This now updates every li element within our page to the value of "We are the Champions". We can also do this using a for of loop, which is actually the better way to achieve this result. 
+
+This is the common pattern of how we change multiple elements. We select a group of things, and iterate through them and change the value. 
+
+We can also changed styles, access and set attributes, we can do all sorts of things but the pattern remains the same with the use of a loop! 
 
 ### Altering styles 
 
