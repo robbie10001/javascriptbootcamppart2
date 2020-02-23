@@ -204,6 +204,22 @@ We can use a loop like we did in the previous section, if we want to change the 
 
 ### getComputerStyles
 
+In the video, we are going to look at a different way of accessing style values.  We are not going to set a value, instead we are going to retrieve what the current value is of a CSS element. 
+
+If we want to get the computed values of styles (what i mean by this is the value that are held within our CSS file) we have a method called getComputedStyle. 
+
+with getComputedStyle, we pass in an element that we have selected. In this case we are selecting the "li" elements and saving them to a variable. 
+
+We then pass it into getComputedStyle. For example, 
+
+const styles = getComputerStlye(li)
+
+This returns to us an object, called a CSS style declaration, and if we open it up, we see a ton of properties, most of the values in this are the default values assigned by our browser. It holds all the possible properties for our CSS element and all their current values. 
+
+![images](/images/section14/getComputed.png)
+
+
+
 
 
 ### Manipulating Classes
@@ -219,7 +235,7 @@ We can use a loop like we did in the previous section, if we want to change the 
 
 
 
-### emoveChild & remove
+### RemoveChild & remove
 
 
 
