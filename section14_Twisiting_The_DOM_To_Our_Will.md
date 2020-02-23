@@ -154,6 +154,9 @@ This is the opposite of parent, it allows us to work downwards through our tree.
 
 #### Siblings 
 
+By accessing sibling elements, we are able to access elements that share a parent and are on the same level within our tree. 
+
+
 ![images](/images/section14/nextsibling.png)
 
 ### Changing multiple elements 
