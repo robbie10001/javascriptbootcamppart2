@@ -183,6 +183,23 @@ We can also changed styles, access and set attributes, we can do all sorts of th
 
 ### Altering styles 
 
+In this section we will address how we alter CSS properties using Javascript and the DOM. 
+
+Every element that we select. has a style property. 
+
+We can use the style property to change styles or colours for example, however, if we are trying to use the style property to read existing properties and styles, it won't work unless those styles are defined inline (which is not how we use css). 
+
+In JavaScript, our property names are CAMELCASED within the DOM. 
+
+![images](/images/section14/alteringstyles.png)
+
+For example, in our CSS file we could have text-align. However, to access this through the DOM we would instead look for textAlign. 
+
+While this is okay, there is a better way to do it, especially when we want to change a number of properties on a number of elements. 
+
+We can use a loop like we did in the previous section, if we want to change the styling on an element type throughout our page. For example, if we want to change every "li" element on a page. 
+
+![GIF](/gifs/section14/alteringstyled.gif)
 
 
 ### getComputerStyles
