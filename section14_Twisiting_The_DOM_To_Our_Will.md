@@ -234,6 +234,81 @@ The best approach to do this is to use the classList property. Class list is an 
 
 ### Creating Elements
 
+We are going to look at how we can create elements from scratch and add them or insert them into the DOM. 
+
+For example, we could create an image, give it a source, and put it somewhere within the page. 
+
+The first step, is to make an element and we can achieve this through the createElement method. 
+
+For example,
+
+document.createElement("h2")
+
+This returns, 
+
+<h2></h2>
+
+This is all we get, it creates an empty element for us. However, if we save this to a variable, and we log it, we can see that what we've really created is an object. So far, all we have done is created an element. 
+
+![images](/images/section14/creatingelementsstep1.png)
+
+If we want to put some content in this element, that is a new step. 
+We can achieve this the following way. 
+
+newh2.innerText = "I like animals"
+
+Now, we have assigned the value of "i like animals" to our newh2 variable. 
+
+![images](/images/section14/creatingelementspart2.png)
+
+We can continue to manipulate it, for example we can add a class to our h2 element. For example, 
+
+newh2.classList.add("special")
+
+This returns 
+
+<h2 class="Special">I like animals!</h2>
+
+The questions becomes, how do we get this into the DOM? How do we get this to show up for us? How do we get it out of the Javascript console and make it useable for us? 
+
+What we need to do, is select an element that we can apphend it to. We can achieve this through the use of methods! 
+
+For example, appendChild() 
+
+appendChild() is a method that we call on a parent that we want to apphend an element into. For example, if we want to apphend our <h2> tag into our <section> within our HTML file. We would do the following, 
+
+const section = document.querySelector("section")
+section.appendChild(newh2)
+
+This now connects our new element into the DOM, through make it a child of our section attribute. 
+
+When we append an attribute using appendChild, it will take a position at the end of the children attributes. 
+
+![images](/images/section14/appchild.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Append, Prepend & insertBefore
