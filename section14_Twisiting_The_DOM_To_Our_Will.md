@@ -322,32 +322,48 @@ This creates a new link for us that is apphended as a child of the paragraph.
 We can create elements of any type, fill them with content and do a whole bunch of other stuff! 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Append, Prepend & insertBefore
 
+We are going to look at a few more methods we can use to add elements to the DOM. We will also talk about removing elements from the DOM. 
+
+When we used apphendChild the element that we added in became the last element where we apphended it. But what if we wanted to append our element to the beginning? Or if we want it to go in the middle? 
+
+In order to do this, we can use the method insertBefore! 
+
+#### insertBefore. 
+
+In order to use insert before, we need to select the parent, as well as the sibling element we want to apphend our element in front of. 
+
+For example. if we want to insert an element as the first element in our LI attributes, we would do the following. When adding in the new element, we pass two arguments. The first is what we are changing, the second is where we are changing. 
+
+![images](/images/section14/insertbefore.png)
+
+#### insertAdjacentElement()
+
+This is a method, that is a bit more complicated. We pass in an element, we must have a target element, but then we also pass in a position which is a string. We have four choices. 
+
+1. "beforebegin" - before the targetElement itself. 
+2. "afterbegin" - Just inside the targetElement, before its first child. 
+3. "beforeend" - Just inside the targetElemt, after its last child. 
+4. "afterend" - After the targetElement itself. 
+
+![images](/images/section14/positionnames.png)
+
+Here we have an example, of insertAdjacentElement in action, just below the H1 tag on the homepage. 
+
+![images](/images/section14/insertAdjacentElement.png)
+
+#### Append, Prepend 
+
+Append and Prepend are two newer methods. They don't work in internet explorer. They are a little bit simplier. 
+
+Append is different from appendChild in that we can change multiple elements at once. 
+
+![images](/images/section14/append.png)
+
+#### Prepend 
+
+This is the same idea of append, but will make something a first child. It will put the element at the beginning of its siblings. 
 
 
 ### RemoveChild & remove
