@@ -275,7 +275,7 @@ What we need to do, is select an element that we can apphend it to. We can achie
 
 For example, appendChild() 
 
-appendChild() is a method that we call on a parent that we want to apphend an element into. For example, if we want to apphend our <h2> tag into our <section> within our HTML file. We would do the following, 
+appendChild() is a method that we call on a parent that we want to apphend an element into. For example, if we want to apphend our H2 tag into our SECTION within our HTML file. We would do the following, 
 
 const section = document.querySelector("section")
 section.appendChild(newh2)
