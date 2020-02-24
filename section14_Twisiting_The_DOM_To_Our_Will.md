@@ -286,6 +286,41 @@ When we append an attribute using appendChild, it will take a position at the en
 
 ![images](/images/section14/appchild.png)
 
+We also have the ability to make all sorts of new elements. For example we can make an image using the DOM. 
+
+
+######  In our app.js file we do the following 
+
+const newImg = document.createElement("img")
+newImg.src = "ADD IMAGE URL"
+document.body.apprendChild(newImg)
+
+When we look inside the DOM now, we can see that we have a new image, that is now being displayed on our webpage at the end of the body! 
+
+We could also give our image an inline style. 
+
+###### app. js 
+
+newImg.style.width = "300px"; 
+
+
+As an other example, lets make a new anchor tag.
+
+
+###### app.js 
+
+const newLink = document.createElement("a"); 
+newLink.innerText = "Robbie's Video! Click Me!";
+newLink.href = "https://wwww.youtube.com/watch?v=QQNL83fhWJU"; 
+
+const firstP = document.querySelector("p"); 
+firstP.appendChild(newLink);
+
+This creates a new link for us that is apphended as a child of the paragraph. 
+
+
+We can create elements of any type, fill them with content and do a whole bunch of other stuff! 
+
 
 
 
