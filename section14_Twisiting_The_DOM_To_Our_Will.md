@@ -368,6 +368,29 @@ This is the same idea of append, but will make something a first child. It will 
 
 ### RemoveChild & remove
 
+In this section we are going to look at removeChild() and the remove() methods. 
+
+These methods remove a method that we place in. 
+
+#### removeChild 
+
+To use removeChild, we need to find the parent of what we are trying to remove and find the item of what we are trying to remove. 
+
+The pattern for remove child is the parent, removeChild and then the child, for example, 
+
+ul.removeChild(removeMe)
+
+![images](/images/section14/removechild.png)
+
+
+#### remove 
+
+remove is not supported in internet explorer. The remove method does not need the parent, all we need to do is select the target, and then call remove on the actual item that we want to remove. 
+
+![images](/images/section14/removemethod.png)
+
+
+
 
 
 ### NBA Scores Chart PT1 
