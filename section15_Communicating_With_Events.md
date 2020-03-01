@@ -33,7 +33,7 @@ The first way we can make an event listener is by inserting the event directly i
 
 ![images](/images/section15/onclickmethod1.png)
 
-#### Inline within our HTML 
+#### Select an Element first in JS and then add event listener 
 
 The second method we can use is to give our event an id. We create a script within our index.html file. We when access this script within our app.js file. Within this file, we define a function that allows our event listener to work. 
 
