@@ -390,15 +390,23 @@ remove is not supported in internet explorer. The remove method does not need th
 ![images](/images/section14/removemethod.png)
 
 
-
-
-
 ### NBA Scores Chart PT1 
 
+This is what we are able to render to the DOM. 
 
+![images](/images/section14/goldenstate1.png)
 
+We are able to achieve this, using the following code. 
+
+![images](/images/section14/code1.png)
+![images](/images/section14/code2.png)
+![images](/images/section14/code3.png)
 
 ### NBA SCORE CHART REFACTOR
 
+We can refactor the above code to make it more useful and resuable. 
+
+![images](/images/section14/goldenstate2.png)
+![images](/images/section14/refactored1.png)
 
 
