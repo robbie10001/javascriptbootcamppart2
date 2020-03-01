@@ -75,6 +75,17 @@ The goal of this project is to create a library of Javascript concepts and ideas
 ##### NBA Scores Chart PT1 
 ##### NBA SCORE CHART REFACTOR
 
+### Section 15-Communicating with Events. 
 
+##### Intro to DOM Events 
+##### 2 Ways Not to Add Events 
+##### addEventListeners
+##### The Impossible Button Demo
+##### Events on Multiple Elements 
+##### The Event Object 
+##### Key Events: keypress, keyup & keydown 
+##### Coin Game Demo 
+##### From Events and PrevantDefault 
+##### Input and Change Events 
 
 
