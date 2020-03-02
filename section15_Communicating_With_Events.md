@@ -45,12 +45,47 @@ The second method we can use is to give our event an id. We create a script with
 
 ![images](/images/section15/listenindex1.png)
 
- What we are saying is, the button, that we selected, when a click happens on this one button, we should execute our function. 
+What we are saying is, the button, that we selected, when a click happens on this one button, we should execute our function. 
 
 This is educational, this is not how we want to add events and to use events. 
 
+If we wanted to have a second click listener, we don't have that option. onclick is a single property. Only the most reason value is held. Therefore we are limited using this method. There are times when we want multiple listeners on events. 
 
 ### addEventListener 
+
+![images](/images/section15/addeventlistener.png)
+
+addEventListener is great, it's one method and it will attach any type of event listener that we want. It will also attach as many as we want to a given element. Now when we click out button we get an alert. We can add a second event listener to the exact same button if we would like. 
+For example, 
+
+const btn = document.querySelector("button); 
+btn.addEventListener("click", function()){
+    alert("Clicked")
+});
+
+btn.addEventListener("click", function()){
+    console.log("Second Thing!")
+});
+
+We are not setting the onClick property, instead we are attaching an event listener which we can multiple of for a given event on a given element. We could attach as many as we want! Let's try a different event. 
+
+btn.addEventListener("mouseover, function(){
+    btn.innerText = "STOP TOUCHING ME!"
+});
+
+btn.addEventListener("mouseout, function(){
+    btn.innerText = "Click ME!"
+});
+
+Now whenever we hove over the button we change its value to "Stop touchimg me", whenever we move of the button it becomes "click me" again. 
+
+Add event listener is our swiss army knife for events. 
+
+
+
+
+
+
 
 
 ### The Impossible Button Demo
