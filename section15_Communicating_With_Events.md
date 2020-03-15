@@ -111,6 +111,8 @@ We can now manipulate this css within our callback function!
 
 Now what we want to do, is that when you mouse over the button, it randomly moves to somewhere else on the screen. There are many ways to do this, we are going with the most simple one, which isn't the best really for peformance. 
 
+#### app.js 
+
 btn.addEventListener("mouseover", function() {
     console.log("Noused over ME!")
     btn.style.left = "200px"
@@ -142,6 +144,12 @@ The point of this, is that we can have multiple events on a single element.
 
 
 ### Events on Multiple Elements 
+
+We are going to look at how we can attach event listeners to multiple elements. 
+
+We have seen how we can attach multiple event listeners to one element, we had a button that had a click listener, but how to we take every button on a page and add a click event handler? Or, 
+
+How do we take every upvote arrow on reddit and make it do something when you click upvote instead of down vote? We don't attach these manually one at a time. Instead, we use a loop.  
 
 
 ### The Event Object 
