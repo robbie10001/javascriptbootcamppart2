@@ -149,7 +149,13 @@ We are going to look at how we can attach event listeners to multiple elements.
 
 We have seen how we can attach multiple event listeners to one element, we had a button that had a click listener, but how to we take every button on a page and add a click event handler? Or, 
 
-How do we take every upvote arrow on reddit and make it do something when you click upvote instead of down vote? We don't attach these manually one at a time. Instead, we use a loop.  
+How do we take every upvote arrow on reddit and make it do something when you click upvote instead of down vote? We don't attach these manually one at a time. Instead, we use a loop. 
+
+We can add eventlisteners to multiple elements inside of a loop. We don't always have to use this, although generally inside of an event listener, this will refer to the individual element that the event listener has been added to. 
+
+![images](/images/section15/appmultipleelements.png)
+
+![images](/images/section15/csshtmlmultipleelements.png)
 
 
 ### The Event Object 
