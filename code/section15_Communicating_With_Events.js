@@ -87,11 +87,10 @@ const colours = [
 ]; 
 //we create a variable container that has the size dementions we want for each of our elements.
 //we extract this information our of our css file. 
-const printColor = function(){
+const changeColor = function(){
     const h1 = document.querySelection("h1");
-    console.log(this);
-    console.log(this.style.backgroundColor);
-
+    //this is refering to the individual div that is clicked on. 
+    h1.style.color = this.style.backgroundColocr;
 }
 
 const h1 = document.querySelector("h1");
@@ -109,13 +108,13 @@ for (let color of colors ) {
     container.appendChild(box); 
 //in order to add an event listener to each element within our div, it is best to use the current loop. 
 //This can be a achieved the following way, 
-    box.addEventListener("click", printColor)
+    box.addEventListener("click", changeColor)
     box.addEventListener("click", function() {
         console.log("clicked a box");
 //the follow line will print out the color of any of the boxes that we click.
         console.log(box.style.backgroundColor);
     });
-}
+};
 
 
 /*
