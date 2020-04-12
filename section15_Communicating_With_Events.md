@@ -209,7 +209,25 @@ I made this into its own repo. In order to see the code for this game, please go
 
 ![images](/images/section15/htmlfile.png)
 
-### From Events and PrevantDefault 
+### From Events and PrevantDefault
+
+We are now going to talk about using forms. What if we want to do something when a user submits a form? 
+
+When we using a form, the select tag, allows us to create drop-down boxes. What we are going to do is when we submit the form, we are not going to have it send a request. Instead, we are going to stop this behaviour from happening. We can then get that data we recieve when a user clicks the submit button and do something with it. For example, display it to the user, or sent some data to a database. 
+
+![images](/images/section15/consoleloge.png)
+
+
+We can do this using the event listener submit. 
+
+The point is that we can stop, prevent default from a form submittion and then tap into the form or its inputs, get the values we want, and then do something else. WE could send form data to a database or apphend something to the page using form data, it's totally up to the developer but the process looks like what we have been discussing in this section. 
+
+![images](/images/section15/eventsjs.png)
+
+![images](/images/section15/eventshtml.png)
+
+![GIF](/gifs/section15/valueof.gif)
+
 
 
 ### Input and Change Events 

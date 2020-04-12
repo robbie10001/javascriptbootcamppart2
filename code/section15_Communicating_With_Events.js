@@ -36,7 +36,7 @@ Events on Multiple Elements
 
 */ 
 
-
+/*
 INDEX.HTML 
 
 <body> 
@@ -137,8 +137,8 @@ for (let color of colors ) {
 
 //ey Events: keypress, keyup, & keydown
 
-
-//INDEX.HTML 
+/*
+INDEX.HTML 
 
 <body> 
     <input id="username" placeholder="username" type="text"/>
@@ -148,7 +148,7 @@ for (let color of colors ) {
     <script src="app.js"></script>
 </body> 
 
-//APP.JS 
+APP.JS 
 
 const input = document.querySelection('#username');
 
@@ -187,11 +187,11 @@ Coin Game Demo
 */ 
 
 
-/*
-Form events & PreventDefault 
+//Form events & PreventDefault 
 
 
-*/ 
+
+
 
 
 
