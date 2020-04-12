@@ -135,11 +135,49 @@ for (let color of colors ) {
 
 
 
-/*
-Key Events: keypress, keyup, & keydown
+//ey Events: keypress, keyup, & keydown
 
 
-*/ 
+//INDEX.HTML 
+
+<body> 
+    <input id="username" placeholder="username" type="text"/>
+    <h3>Shopping List</h3>
+    <input type="text" id="addItem" placeholder="enter aa food"/>
+    <ul id="items"></ul>
+    <script src="app.js"></script>
+</body> 
+
+//APP.JS 
+
+const input = document.querySelection('#username');
+
+input.addEventListener('keydown', function(e) {
+    console.log('KEY DOWN!')
+});
+//this events runs when we press a key down. 
+
+input.addEventListener('keyup', function(e) {
+    console.log('KEY UP!')
+});
+//this event runs when we let go of a key. 
+
+input.addEventListener('keypress', function(e) {
+    console.log('KEY DOWN!')
+});
+
+const addItemInput = document.querySelector('#addItem');
+const itemsUL = document.querySelector('#items');
+
+addItemInput.addEventListener('keypress', function(e))
+   if(e.key === 'enter') {
+       const newItemText = this.value 
+       const newItem = document.createElement('li');
+       newItem.innerText = newItemText;
+       itemsUL.appendChild(newItem)
+       this.value = '';
+
+   }
 
 
 /*

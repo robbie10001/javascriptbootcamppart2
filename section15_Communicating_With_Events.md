@@ -181,6 +181,17 @@ Here is another example, this time we have an event listener listening for a key
 
 ### Key Events: keypress, keyup & keydown 
 
+We are going to talk more about key events. There are at least three options for listening for a key press, or a keydown or a keyup. When we want to know if something is changing in the input, we would use keypress. When we hit return, even this counts as a keypress. A lot of the time we want to listen to a return press or an enter key press. Meaning that the user is hitting submit to finish a form or whatever. 
+
+![images](/images/section15/keyeventscode.png)
+
+Keyup and KeyDown are going to fire for any key, that we touch at all. The way keypress is supposed to work, is that it only fires when an input is changed. For example,  an arrow key doesn't count at all. 
+
+![GIF](/gifs/section15/keydown.gif)
+
+![GIF](/gifs/section15/addingelements.gif)
+
+
 
 ### Coin Game Demo 
 
