@@ -229,5 +229,22 @@ The point is that we can stop, prevent default from a form submittion and then t
 ![GIF](/gifs/section15/valueof.gif)
 
 
-
 ### Input and Change Events 
+
+Next up, we are going to look at the onInput and onChange methods. 
+
+We can use these method in order to stay up to date with user input and change in real time.
+For example, by creating an empty object and adding event listeners, we can capture user input in a data structure of our choosing. 
+
+![images](/images/section15/formdata.png)
+
+We have a in-sync representation of what is happening with our form. This enables us to do some really cool stuff. For example, we could use it to do credit card information authentication. For example, 
+
+![GIF](/gifs/section15/cc.gif)
+
+In this example, all the events are being trigged before the event takes place! This is the same thing we are doing with our example in our code, except it doesn't look as preety! 
+
+![images](/images/section15/com.png)
+
+![images](/images/section15/dom.png)
+
