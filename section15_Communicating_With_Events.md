@@ -160,6 +160,24 @@ We can add eventlisteners to multiple elements inside of a loop. We don't always
 
 ### The Event Object 
 
+The event object, is a very useful part of working with events. If we need information about events, weather its what was clicked on, what key was pressed, where on the screen, we can access a whole host of information using the event object. 
+
+![images](/images/section15/theeventobject.png)
+
+In the above example, when wchange color function on the last line within our for loop in called, it is called when a user clicks on a box. We are never executing the function ourselves. It's being called for us.
+
+Its is also being passed a value, the event object. The event object, can sometimes be extremly useful to have access to in our callback, in our event handler. We always have access to it, although to capture the data, we would need to do the following. 
+
+![GIF](/gifs/section15/eventobject.gif)
+
+1. We add a paramatter to our function, we can call this anything. 
+2. We console.log what it contains. 
+3. We see that it's an event object, that contains information about the particular event. 
+
+Here is another example, this time we have an event listener listening for a keypress. 
+
+![GIF](/gifs/section15/eventkeypress.gif)
+
 
 ### Key Events: keypress, keyup & keydown 
 
