@@ -192,9 +192,22 @@ Keyup and KeyDown are going to fire for any key, that we touch at all. The way k
 ![GIF](/gifs/section15/addingelements.gif)
 
 
-
 ### Coin Game Demo 
+I made this into its own repo. In order to see the code for this game, please go to https://github.com/robbie10001/CoinGameDemo
 
+![GIF](/gifs/section15/coingame.gif)
+
+#### JS FILE
+
+![images](/images/section15/jsfile.png)
+
+#### CSS FILE
+
+![images](/images/section15/cssfile.png)
+
+#### HTML FILE
+
+![images](/images/section15/htmlfile.png)
 
 ### From Events and PrevantDefault 
 
