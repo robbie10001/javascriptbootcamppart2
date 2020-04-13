@@ -91,8 +91,30 @@ An example of something that takes time is when we send a request. For example, 
 
 The way we can avoid this process and actually get on with our code will waiting for a process to finish is what we are going to address in the next section.
 
-## How Asychronous Callbacks Actually Work 
+### How Asychronous Callbacks Actually Work 
 
+We have established the JS is single threaded, meaning that it does one thing at a time. Commonly with JS we do a lot of things that take time. This could be getting data from a database, or an API, or trying to save something, or even just setting a timer for example.
+
+Here is a simple example, its not exactly full code that would work. Imagine a user types something into a form, it submits, we want to grab the value of the form, save it to a database (this could take a second or two) and the we reset the from. 
+
+![images](/images/section16/time.png)
+
+Fortunately, instead of needing to just wait, we have a work around. This is a callback function. These functions are run at the appropriate time after an interval has passed in the below example. However, this doesn't really answer how does this work or why does this work. 
+
+
+The reason why this works, is because of the browser. JS is not the same thing as our browser. The browser itself are written in a different language often in C++. The browser itself is able to do certain tasks that JS sucks at. These problems are handed off to the browser, JS goes here is some stuff i need you to do and the broswer takes over, once its down it reminds JS that it needs to take over again.
+
+So in our case, JS is not setting a timer or keeping track of how many seconds have gone by, JS is not sending a request to an API, the browser is what is actually handling all this. 
+
+Browsers come with web APIs that are able to handle certain tasks in the background (like making requests or setTimeout). The JS call stack recognizes these web API functions and passes them off to the browser to take of. One the browser finishes those tasks, they return and are pushed onto the stack as a callback. 
+
+![images](/images/section16/back.png)
+
+As we can see from the above image, this is seperate from JS, the browser itself is what is setting the timeout. While this happening JS is free to continue to the next line of code, in the above example console.log('I print second!');
+
+![images](/images/section16/silly.png)
+
+Once the 3 seconds have occured in our example, the browser tells JS to run the callback function, and this function is placed back in the callstack so that JS knows it has to do this thing. So in our example, JS takes over and it now executes the function and in our example this evaluates to console.log('i print have 3 seconds'); running. 
 
 
 ### Welcome to Callback Hell 
