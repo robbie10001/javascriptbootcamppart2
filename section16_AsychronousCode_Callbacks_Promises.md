@@ -79,12 +79,17 @@ getRantText now has all the information it needs and so is able to return rant. 
 
 Now we are back in makeRant the original function call that has been waiting this whole time. It then finishes and is removed from the callstack. 
 
-
-
-
 ### JS is single threaded 
 
+A fundemental aspect of JS as a language is that it's single threaded language. At any given point in time, that single JS thread is running at most one line of JS code. We are not multitasking we are running one thing at a time. 
 
+At any given point, one thing is being run at a time and this has a whole bunch of implications.
+
+The problem with this is that it could be a serious issue if we doing things that take time, anything that is not immediate. Our program would have to wait for this to finish before moving onto the next line of code. 
+
+An example of something that takes time is when we send a request. For example, from the browser we write some JS code that asks for some data from a movie api. This takes time, we send a request to the server, the server responds to the request and sends a response back, all of this takes time. 
+
+The way we can avoid this process and actually get on with our code will waiting for a process to finish is what we are going to address in the next section.
 
 ## How Asychronous Callbacks Actually Work 
 
