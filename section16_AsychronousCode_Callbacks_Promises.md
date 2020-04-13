@@ -119,6 +119,25 @@ Once the 3 seconds have occured in our example, the browser tells JS to run the 
 
 ### Welcome to Callback Hell 
 
+We have already seen why callbacks are so important in javascript. We pass a callback into certain functions that the browser takes over, things like setTimeout, setInterval when we make requests, the browser takes care of that, and we pass in a callback. 
+
+However, callbacks are not perfect and can get messy very quickly. This is what we're going to look at in this section.
+
+The purpose of the below code is to show a situation where callbacks are useful, when we are waiting for something to finish (setTimeout), in the below we have to pass callbacks. All of this stems from the facts that JS can only do one thing at a time and that the browser is taking over whenever we use setTimeout. 
+
+As we can see below, this can get really messy. This is especially true when we start having different outcomes (sucess, failures) which happens a lot when we are making requests. As we will see, when we make real web http requests, we follow the same pattern, and if we follow the pattern below with nesting and callbacks, things get very difficult to follow quickly. It becomes difficult to understand.
+
+![images](/images/section16/htmling.png)
+
+![images](/images/section16/cssing.png)
+
+![images](/images/section16/jsing.png)
+
+![images](/images/section16/jser.png)
+
+
+This is where promises come in. Promises allow us to rewrite a function like the ones above, so that we don't have to do all the crazy nesting that we are doing above. Promises are so much easier to read.
+
 
 
 ### Introducing Promises! 
