@@ -138,10 +138,38 @@ As we can see below, this can get really messy. This is especially true when we 
 
 This is where promises come in. Promises allow us to rewrite a function like the ones above, so that we don't have to do all the crazy nesting that we are doing above. Promises are so much easier to read.
 
-
-
 ### Introducing Promises! 
 
+In the last section, we have seen how using a bunch of callbacks and nesting things, can get really out of hand quickly. The example from the previous section and the example below are what is known as callback hell.
+
+![images](/images/section16/callbackhell.png)
+
+When we work with promises there are two things that we need to understand. 
+
+1. How do we create a promise? How do we create a function that could return a promise.
+2. How do we consume or how do we interact with promises? This is something we do all the time, even if we are not writing the promises ourselves, we might be using a library like axios, which returns in a lot of its functions promises, so we need to understand how we work with promises. 
+
+To avoid the problem of callback hell, we can use promises. 
+
+Promises are a JS object representing the eventual completion or failure of an asynchronous operation. It's much easier to read and understand than when we are stuck in callback hell.
+
+A promise is a way of promising a value that you may not have at the moment. The way to think about it is a promise in the real world. A promise is guarantee of a value in the future, either a sucess or a failure. 
+
+The object that is returned while we are waiting for some data or whatever, is a promise.  What we do is that we attach callbacks to the object (the promise).
+
+We don't pass in callbacks into a function and nest a whole bunch of stuff like we did in callback hell. Promises are OBJECTS that we can attach functions to instead.  
+
+![images](/images/section16/promise.png)
+
+The way we make a new promise in JS, is like this 
+
+![images](/images/section16/intro.png)
+
+![images](/images/section16/new.png)
+
+We have seen the two basic piece of promises. To make a promise we call new Promise. Every time we pass a function with two parametters, resolve and reject. Within this function, we can then call to resolve the function. We call reject as a function to reject the promise. If we do neither, our promise will always be pending. 
+
+Then we looked at the .then and the .catch method, whatever we pass into .then will automatically run, when a given promise is resolved. Whatever we pass into the .catch method will automatically run whenever a promise is rejected. 
 
 
 ### Returning Promises from Functions 

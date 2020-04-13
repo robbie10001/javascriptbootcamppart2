@@ -196,13 +196,65 @@ moveX(
 	}
 );
 
-
 */ 
-
-
 
 /*
 Introducing Promises! 
+
+JS
+
+
+//below we are defining a variable that takes in a new promise. 
+//when we create a promise, we pass in a function
+//and this function always has two parameters. 
+//we normally call these paramaters resolve and reject.These paramaters are actually functions.
+//At any point in our function, if we call resolve the promise will be resolved.
+//if  we call reject, our promise will be rejected. 
+const willGetYouADog = new Promise((resolve, reject) => {
+//we create a promise that is randomly resolved. Half the time in will resolve and half the time it will reject.
+	const rand = Math.random();
+	if (rand < 0.5) {
+	//the resolve function acts to carry out our promise. 
+		resolve();
+	}
+	else {
+	//tbe reject function acts to carry out our promise as well
+		reject();
+	}
+});
+//This below code is how we actually interact with a promise. Its how we run code if its rejected versus if its resolved. 
+//if we hit the the resolve function we will return the .then 
+//the .then method will run if our promise is resolved. 
+willGetYouADog.then(() => {
+	console.log('YAY WE GOT A DOG!!!!');
+});
+//if we hit the reject function we will hit the catch. 
+//the .catch method will run if we hit the reject. 
+willGetYouADog.catch(() => {
+	console.log(':( NO DOG');
+});
+
+HTML 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="app.css">
+  <title>Promises Intro</title>
+</head>
+
+<body>
+  <h1>Promises Intro!</h1>
+  <script src="app.js"></script>
+</body>
+
+</html>
+
+
 
 
 */ 
