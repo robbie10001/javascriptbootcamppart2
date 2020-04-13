@@ -34,6 +34,52 @@ The first thing into the callstack is the last thing out out of call stack.
 
 ### Call stack debugging with dev tools 
 
+We can use chrome dev tools to look at a representation of the call stack, and step through it one call at a time. 
+
+![images](/images/section16/js.png)
+
+![images](/images/section16/html.png)
+
+![images](/images/section16/ihatemayonnaise.png)
+
+We can open up our dev-tools and open up our sources tab, in the sources tab, we can open up the navigator, and go to the file with our code, we then add in a breakpoint by selecting one of the lines within our file. This will pause our code when it hits this breakpoint. 
+
+![GIF](/gifs/section16/breakpoint.gif)
+
+Firstly, we need to refresh the page, in order to get access to our callstack. We can then go through the order in which our call stack is called!
+
+![GIF](/gifs/section16/aa.gif)
+
+We can see that the callstack now contains the following, in order of creation.
+
+1. (anonymous)
+2. makeRant
+3. getRantText
+4. scream 
+
+scream is then completed a removed from the call stack. 
+
+next, getRantText is run. It uses the function repeat 8 times. so repeat is added to the callstack. At the moment our callstack looks like this,
+
+1. repeat
+2. getRantText
+3. MakeRant
+4. (annonymous)
+
+Once the loop is over, we return the result. This finishes the repeat function and it's then removed from the callstack. Current callstack
+
+1. getRantText
+2. makeRant
+3. (annonymous)
+
+getRantText now has all the information it needs and so is able to return rant. getRankText is then removed from the callstack. 
+
+1. makeRant
+2. (annonymous)
+
+Now we are back in makeRant the original function call that has been waiting this whole time. It then finishes and is removed from the callstack. 
+
+
 
 
 ### JS is single threaded 
