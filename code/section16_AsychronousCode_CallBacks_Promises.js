@@ -260,12 +260,36 @@ HTML
 */ 
 
 
+//Returning Promises from Functions 
 
-/*
-Returning Promises from Functions 
+//we often return a promise from a function instead of just making one promise like we did above,
+//we could instead define a function and this function, can the return our promise. 
+
+const makeDogPromise = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const rand = Math.random();
+		if (rand < 0.5) { 
+			resolve();
+		}
+		else {
+			reject();
+		}
+	  }, 5000)
+	}); 
+	};
+	makeDogPromise()
+	.then(() => {
+		console.log('YAY WE GOT A DOG!!!!');
+	}) 
+	.catch(() => {
+		console.log(':( NO DOG');
+	});
+}
 
 
-*/ 
+
+//this is the first example we have had of a promise that takes some time (5 seconds).
 
 
 

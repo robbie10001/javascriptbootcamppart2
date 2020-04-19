@@ -174,7 +174,19 @@ Then we looked at the .then and the .catch method, whatever we pass into .then w
 
 ### Returning Promises from Functions 
 
+![images](/images/section16/new.png)
 
+Our current promise, is either resolved or rejected immediately. There is nothing in this promise that takes time. In this example, there is really no reason to write it as a promise, we could write it instead as a simple if/else statement. 
+
+Now lets introduce some delay so that it takes longer. We are going to use setTimeOut to simulate how many years it took Colts dad to reject the promise that he was going to get him a dog. 
+
+![images](/images/section16/dogo.png)
+
+we often return a promise from a function instead of just making one promise like we did above, we could instead define a function and this function, can the return our promise. 
+
+What we have seen in this section is that 
+
+1. we can chain .then and .catch together without needing to create a varaiable or needing to reference the variable again and only one or the other will run (the resolve or the reject), the other thing we have seen is that we can you a function to call our promises. 
 
 ### Resolving/Rejecting with values 
 
