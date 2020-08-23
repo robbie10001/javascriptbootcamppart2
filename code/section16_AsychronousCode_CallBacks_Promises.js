@@ -287,25 +287,69 @@ const makeDogPromise = () => {
 	});
 }
 
-
-
+/*
 //this is the first example we have had of a promise that takes some time (5 seconds).
 
-
-
-/*
 Resolving/Rejecting with values 
+*/
+//we create a callback function that takes in a single argument url.
+const fakeRequest = (url) => {
+//this function returns are new Promise which must be resolved or rejected. 
+	return new Promise((resolve, reject) => {
+//we set this promise to execute after 3 seconds. 
+//It will be rejected 30% of the time and resolve 70% of the time.
+		setTimeout(() => {
+			const rand = Math.random()
+				if(rand < 0.3){
+				//THIS IS WHERE WE PASS IN THE VALUE OF OUR REJECT CALL
+				//We can pass multiple paramaters through our reject.
+					reject({status: 404});
+				//if something is rejected, we pass in an object with the key of status. 
+				//we can then see this value when we call the .catch(response) by console.log(response.status)
+				//this returns in this case the value of the object...404;	
+				}
+				else {
+				//THIS IS WHERE WE PASS IN THE VALUE OF OUR RESOLVE CALL
+				//we create variable pages. This is an object /users, which contains an array.
+				//this array contains two objects both with an id and a username. 
+				//we also create an object /about. 
+					const pages = {
+						'/users': [
+							{id: 1, username: "bilbo"},
+							{id: 2, username: "Esmererla"}
+						],
+						'/about': 'This is the about page!'
+					};
+					//we create a variable data that take the value of our pages array. 
+					const data = pages[url]
+					resolve({ status: 200, data });
+				}
+		}, 3000)
+	});
+}
+//if the request is sucessful we log the following code. 
+fakeRequest('/about')
+.then((response) => {
+	console.log("Status Code", res.status)
+	console.log("Data", res.data)
+	console.log("REQUEST WORKED!");
+})
+//if the request fails we log the following code. 
+.catch((response) => {
+	console.log(response.status)
+	console.log("REQUEST FAILED!");
+});
 
 
-*/ 
+
+
 
 
 
 /*
 The Delights of Promise Chaining 
 
-
-*/ 
+ 
 
 
 

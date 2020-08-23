@@ -190,6 +190,17 @@ What we have seen in this section is that
 
 ### Resolving/Rejecting with values 
 
+When you reject or resolve a promise, you can reject or resolve the callback with a value. 
+
+You will then have access to this value in our callback to the .then or the .catch. 
+
+This is really useful, because most of the time we want to know why something was rejected and if it was successful, what did we get back. For example, with an http request. 
+
+The video is about how we can request or resolve with a value. We can pass a value in to our resolve or reject calls. 
+
+![images](/images/section16/res1.png)
+(continued)
+![images](/images/section16/res2.png)
 
 
 ### The Delights of Promise Chaining 
