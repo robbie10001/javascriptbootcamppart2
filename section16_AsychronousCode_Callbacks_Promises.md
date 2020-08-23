@@ -202,6 +202,12 @@ The video is about how we can request or resolve with a value. We can pass a val
 (continued)
 ![images](/images/section16/res2.png)
 
+Instead of resolving or rejecting randomly, let's get rid of the random number, and instead reject if the url is invalid (if it's not contained within pages). What we will do is check within our setTimeout if the url is in pages.
+
+![images](/images/section16/res3.png)
+
+In this video, we have seen that we can resolve or reject with data. We can pass through arguments and call this data when we call our method with .then and .catch. 
+
 
 ### The Delights of Promise Chaining 
 

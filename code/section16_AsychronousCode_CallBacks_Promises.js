@@ -264,7 +264,7 @@ HTML
 
 //we often return a promise from a function instead of just making one promise like we did above,
 //we could instead define a function and this function, can the return our promise. 
-
+/*
 const makeDogPromise = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
@@ -292,52 +292,49 @@ const makeDogPromise = () => {
 
 Resolving/Rejecting with values 
 */
-//we create a callback function that takes in a single argument url.
-const fakeRequest = (url) => {
-//this function returns are new Promise which must be resolved or rejected. 
+const fakeRequest = (url) => { 
 	return new Promise((resolve, reject) => {
-//we set this promise to execute after 3 seconds. 
-//It will be rejected 30% of the time and resolve 70% of the time.
 		setTimeout(() => {
-			const rand = Math.random()
-				if(rand < 0.3){
-				//THIS IS WHERE WE PASS IN THE VALUE OF OUR REJECT CALL
-				//We can pass multiple paramaters through our reject.
-					reject({status: 404});
-				//if something is rejected, we pass in an object with the key of status. 
-				//we can then see this value when we call the .catch(response) by console.log(response.status)
-				//this returns in this case the value of the object...404;	
-				}
-				else {
-				//THIS IS WHERE WE PASS IN THE VALUE OF OUR RESOLVE CALL
-				//we create variable pages. This is an object /users, which contains an array.
-				//this array contains two objects both with an id and a username. 
-				//we also create an object /about. 
-					const pages = {
-						'/users': [
-							{id: 1, username: "bilbo"},
-							{id: 2, username: "Esmererla"}
-						],
-						'/about': 'This is the about page!'
-					};
-					//we create a variable data that take the value of our pages array. 
-					const data = pages[url]
-					resolve({ status: 200, data });
-				}
-		}, 3000)
+			const pages = {
+				'/users': [
+					{id: 1, username: "bilbo"},
+					{id: 2, username: "Esmererla"}
+				],
+				'/about': 'This is the about page!'
+			};
+			//data is set to the value of our /users...id's and usernames.
+			const data = pages[url];
+			//if we have this data, we successful resolve and get back a status 200 and the information within our object
+			if(data) {
+				resolve({ status: 200, data });
+			} else {
+			//if we don't have the data, we get back a status 404 and the promise resolves with a falure. 
+				reject({status: 404});
+			}
+		}, 3000);
 	});
-}
-//if the request is sucessful we log the following code. 
-fakeRequest('/about')
+};
+
+//Because /users is a valid value for pages[url] our promise is successful
+fakeRequest('/users')
+.then((response) => {
+	//this returns: Status Code: 200
+	console.log("Status Code", res.status)
+	//this returns: Data which contains the two items in our array.
+	console.log("Data", res.data)
+})
+.catch((response) => {
+	console.log(response.status)
+});
+//Because /dogs is not a valid value for pages[url] our promise fails. 
+fakeRequest('/dogs')
 .then((response) => {
 	console.log("Status Code", res.status)
 	console.log("Data", res.data)
-	console.log("REQUEST WORKED!");
 })
-//if the request fails we log the following code. 
 .catch((response) => {
+	//this returns: 404
 	console.log(response.status)
-	console.log("REQUEST FAILED!");
 });
 
 
