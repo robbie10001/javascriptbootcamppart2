@@ -19,7 +19,7 @@ Then we are going to talk about a library this is really popular to make request
 
 We are doing the same thing using all three of these methods, just the syntax is clearer. 
 
-###### What is AJAX? 
+#### What is AJAX? 
 
 AJAX stands for Asynchronous Javascript and XML. This is a bit wrong, most of the time these days we work with JASON instead of XML. Although it's called AJAX still. 
 
@@ -45,6 +45,28 @@ The browser sends a request information comes back. Javascript then takes over a
 
 
 ### JSON & XML 
+
+JSON and XML are ways of formatting data so you can send them from a server to another server or from a server to a broswer. It's a format for information and they solve esentially the same problem. That is we have some data that we want to send, and we need a common way for us to send that information. 
+
+##### XML 
+
+XML stands for Extensible Markup Language. We can think of it as almost the parent of HTML, with the exception that the element names look very different. XML is just a way of grouping content and giving meaning to our data. 
+
+![images](/images/section17/xmlexample1.png)
+
+Javascript has a way that we can take XML and turn it into Javascript. We do this by parsing the text that is XML and turning it into actual javascript. 
+
+There is another format, called JSON.
+
+##### JSON
+
+JSON is really common these days. It stands for Java Script Object Notation. 
+
+![images](/images/section17/jsonintro1.png)
+
+JSON is not Javascript even though it looks like Javascript and shares much in common with it. JSON is another notation for sending data.
+
+In JSON every key must be a string. We use colons (:) instead of an object. We can also use arrays. We can also use primitive datatypes but cannot use more complicated data types like functions. Because of it's similarities to Javascript it is very easy for us to understand what is going on with JSON. 
 
 
 ### XMLHttpRequests: The Basics
