@@ -87,7 +87,7 @@ Then we call the request object (in this case myReq) .open the type of request w
 
 If this request works, myReq.onload will run. If it fails myReq.onerror will run instead. 
 
-![images](/images/section17/XMLREQUEST1.png)
+![GIF](/gifs/section17/fr1.gif)
 
 
 

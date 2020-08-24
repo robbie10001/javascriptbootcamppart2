@@ -47,7 +47,7 @@ firstReq.addEventListener('error', () => {
     console.log('error')
 })
 //we tell the type of request and where the request is.
-firstReq.open("GET", 'https://swapi.co/api/plantets/');
+firstReq.open("GET", 'http://swapi.dev/api/planets');
 //then we tell is to send it. 
 firstReq.send(); 
 console.log('Request Sent!')
