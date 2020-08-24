@@ -138,9 +138,13 @@ Below is an example of Fetch where we account for if the data doesn't behave the
 ![images](/images/section17/fetch3.png)
 
 
-
 ### CHANING FETCH REQUESTS 
 
+The main selling point of fetch is that we don't have to nest things and so it isn't messy like XHR requests. We get around nesting by chaining promises and using a bunch of .then(s).
+
+Below we have multiple requests that are hapeening one after another. We don't have any nesting, our code structure is very flat. Although we do have some logic that we repeat. This is the great advantage of fetch, we can use PROMISES to keep our code flat and not nested. 
+
+![images](/images/section17/chainingfetchrequests1.png)
 
 
 ### REFACTORING FETCH CHAINS 

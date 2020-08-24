@@ -82,7 +82,7 @@ console.log('Request Sent!')
 
 /*
 A BETTER WAY: FETCH! 
-*/
+
 fetch('http://swapi.dev/api/planets')
     .then((response) => {
         if (!response.ok) 
@@ -99,17 +99,48 @@ fetch('http://swapi.dev/api/planets')
         console.log("something didn't work");
         console.log(err);
     });
-
- 
-
-
-
-
+*/
 /*
 CHANING FETCH REQUESTS 
-
-
 */ 
+//we request all the planets. 
+fetch('http://swapi.dev/api/planets')
+//we then get a response.
+    .then((response) => {
+//if there is an error with our response we throw an error we the status code of our response.status
+        if (!response.ok) 
+            throw new Error(`Status Code Error: ${response.status}`);
+//if it works we return the response on make the json into javascript. 
+        return response.json();
+    })
+//we then have another promise.
+    .then((data) => {
+//from this we get the first film that that the first planet is in. 
+        console.log("fetched all planets")
+        const filmUrl = data.results[0].films[0];
+//we then return this promise.
+        return fetch(filmUrl)
+    })
+    .then((response) => {
+//if something goes wrong we error handle it again. 
+        if(!response.ok) {
+            throw new Error(`Status Code Error: ${response.status}`);
+        }
+//otherwise, we take that json and make in into javascript. 
+        return response.json()
+    })
+//we then make another promise, and console.log the data for the first film,
+//that the first planet is in. 
+    .then((data) => {
+        console.log("fetched first film the first planet is in")
+//Here we log the data.title we is: A New Hope
+        console.log(data.title)
+    })
+//we have a catch for any failure that we might have with our promises. 
+    .catch((err) => {
+        console.log("something didn't work");
+        console.log(err);
+    });
 
 
 
