@@ -100,6 +100,43 @@ The main reason why people don't like to use XHR's is that it's difficult things
 
 ### A BETTER WAY: FETCH! 
 
+Fetch is the newer way of making a request through Javascript. It supports the use of promises, however it is not supported in internet explorer. It also has better syntax is terms of its simplicity. 
+
+The fetch method takes one mandatory argument, the path to the resource you want to fetch. It returns a PROMISE that resolves to the response of the request. 
+
+##### How to use fetch 
+
+![images](/images/section17/fetch1.png)
+
+1. We call our fetch method and pass in a url. 
+    fetch('http://icanhazdadjoke.com/23/2`, {
+        headers: { Accepts: 'aplication/json`}
+    })
+2. That then returns a promise which is either accepted or rejected. 
+    .then((res) => {
+        if (res.stauts !=== 200) {
+            console.log("Problem", res.status);
+            return;
+        } 
+
+if it is resolved sucessfully we are given a response which we then parse into JSON. 
+        res.json().then((data) => {
+            console.log(data);
+        });
+    })
+Otherwise we catch the error.
+        .catch(function(err) {
+            console.log("Fetch Error", err);
+    })
+
+Below is an example of a fetch request when everything goes correctly. 
+
+![images](/images/section17/fetch2.png)
+
+Below is an example of Fetch where we account for if the data doesn't behave the way we expect. 
+
+![images](/images/section17/fetch3.png)
+
 
 
 ### CHANING FETCH REQUESTS 

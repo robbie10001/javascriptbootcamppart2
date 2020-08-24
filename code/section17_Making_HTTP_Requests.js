@@ -54,7 +54,7 @@ console.log('Request Sent!')
 
 
 XMLHttpRequests: Chaining Requests
-*/
+
 const firstReq = new XMLHttpRequest(); 
 firstReq.addEventListener('load', function() {
     const data = JSON.parse(this.responseText);
@@ -83,7 +83,22 @@ console.log('Request Sent!')
 /*
 A BETTER WAY: FETCH! 
 */
-
+fetch('http://swapi.dev/api/planets')
+    .then((response) => {
+        if (!response.ok) 
+            throw new Error(`Status Code Error: ${response.status}`);
+            
+        response.json().then((data) => {
+        for (let planet of data.results) {
+            console.log(planet.name)
+        }
+        });
+    })
+//we have a catch for any failure that we might have with our promises. 
+    .catch((err) => {
+        console.log("something didn't work");
+        console.log(err);
+    });
 
  
 
