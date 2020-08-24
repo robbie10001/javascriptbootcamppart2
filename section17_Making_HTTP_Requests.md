@@ -154,7 +154,24 @@ In this section, we are going to work on refactoring our code. We can refactor o
 
 ### AN EVEN BETTER WAY: AXIOS 
 
+A third option for requests using JavaScript is AXIOS. It is not native to javascript, like fetch or XHR's. Instead it's an external library. There are many other libraries like axios online. 
 
+Also Axios does is simplify the process of making requests. It uses fetch behind the scenes. So it doesn't give us things we can't already do, it just makes things easier to use. 
+
+It is promised based so we don't have to deal with a bunch of callbacks. 
+
+One of the things people really like about axios is that you can use it both on the client side and the server side using node.js
+
+Just like fetch, we get a promise back when we make a request using axios. 
+
+One of the main advantages of using axios, is that we don't have to use json parsing on our own.
+
+When we used fetch, we had to manually check the response status code. Fetch doesn't reject a promise if the status code is something other than 200. Axios, in contrast, knows that if there is a status code besides 200, you want the catch callback to run. This simplifies things for us as developers.  
+
+1. We don't have to parse JSON. 
+2. We don't have to weed out the bad status codes. 
+
+![images](/images/section17/axios1.png)
 
 ### SEQUENTIAL AXIOS REQUESTS
 

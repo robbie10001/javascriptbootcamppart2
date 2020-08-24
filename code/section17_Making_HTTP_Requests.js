@@ -146,7 +146,7 @@ fetch('http://swapi.dev/api/planets')
 
 /*
 REFACTORING FETCH CHAINS 
-*/  
+  
 //we create a function that gets our inital response.
 const checkStatusAndParse = (response) => {
 //if something goes wrong, we throw an error. 
@@ -186,13 +186,16 @@ fetchNextPlants()
         console.log(err);
     });
 
-
-
-/*
 AN EVEN BETTER WAY: AXIOS 
-
-
 */ 
+//if we give an invalid url we will get a 404 error. 
+axios.get('http://swapi.dev/api/planets')
+.then((res) => {
+    console.log(res.data);
+})
+.catch((error) => {
+    console.log(error)
+})
 
 
 
