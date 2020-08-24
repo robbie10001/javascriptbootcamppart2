@@ -211,6 +211,14 @@ In this video, we have seen that we can resolve or reject with data. We can pass
 
 ### The Delights of Promise Chaining 
 
+The last really important part to understand about promises is promise chaining. Promise chaining allows us to extract more and more data from our data source. By usingthe return keyword, we are able to chain data extraction together without the need to nest our promises. 
+
+![images](/images/section16/chain1.png)
+![images](/images/section16/chain2.png)
+
+Because we are chaining and not nesting our responses, we are able to use a single .catch for all of our requests. 
+
+![images](/images/section16/chain3.png)
 
 
 ### Refactoring with Promises 

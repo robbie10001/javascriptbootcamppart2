@@ -292,6 +292,7 @@ const makeDogPromise = () => {
 
 Resolving/Rejecting with values 
 */
+/*
 const fakeRequest = (url) => { 
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
@@ -337,14 +338,103 @@ fakeRequest('/dogs')
 	console.log(response.status)
 });
 
-
-
-
-
-
-
-/*
 The Delights of Promise Chaining 
+*/
+//This is a FAKE Http Request Function
+//It takes 1 second to resolve or reject the promise, depending on the url that is passed in
+const fakeRequest = (url) => {
+	
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const pages = {
+				'/users'        : [
+					{ id: 1, username: 'Bilbo' },
+					{ id: 5, username: 'Esmerelda' }
+				],
+				'/users/1'      : {
+					id        : 1,
+					username  : 'Bilbo',
+					upvotes   : 360,
+					city      : 'Lisbon',
+					topPostId : 454321
+				},
+				'/users/5'      : {
+					id       : 5,
+					username : 'Esmerelda',
+					upvotes  : 571,
+					city     : 'Honolulu'
+				},
+				'/posts/454321' : {
+					id    : 454321,
+					title :
+						'Ladies & Gentlemen, may I introduce my pet pig, Hamlet'
+				},
+				'/about'        : 'This is the about page!'
+			};
+			const data = pages[url];
+			if (data) {
+				resolve({ status: 200, data }); //resolve with a value!
+			}
+			else {
+				reject({ status: 404 }); //reject with a value!
+			}
+		}, 1000);
+	});
+};
+
+//As we can see below, we are able to make requests that are chained not nested within other requests. 
+//we are able to do this because we return our promises. 
+//They are dependent on each other to work. 
+//we make a request to /users which we then gets 
+fakeRequest('/users')
+	.then((res) => {
+		//this returns: {status: 200, data: Array(2)}
+		console.log(res);
+		//We get the first id element from our data array. In this case that is 1. 
+		//this is the piece of information we need to chain our request. 
+		const id = res.data[0].id;
+		//we then return fakeRequest(`/users/1)'
+		return fakeRequest(`/users/${id}`);
+	})
+	.then((res) => {
+		//this returns the value of '/users/1': {city: "Lisbon", id: 1, topPostId: 454321, upvotes: 360, username: "Bilbo"}
+		console.log(res);
+		//We then create a variable that gets the topPostId: this is 454321
+		const postId = res.data.topPostId;
+		//we then use string interpolation to return to us 'posts/454321'
+		return fakeRequest(`/posts/${postId}`);
+	})
+	.then((res) => {
+		//this then returns our /posts/454321 information: {status: 200, data:}
+		//data now contains {id: 454321, title: "Ladies & Gentlemen, may i introduce my pet pig, hamlet"}
+		console.log(res);
+	})
+	//we then have a catch if something goes wrong with any of data calls. 
+	.catch((err) => {
+		console.log('OH NO!', err);
+	});
+
+// ************************************************
+// ATTEMPT 2 (deliberate error to illustrate CATCH)
+// ************************************************
+// fakeRequest('/users')
+// 	.then((res) => {
+// 		console.log(res);
+// 		const id = res.data[0].id;
+// 		return fakeRequest(`/useALSKDJrs/${id}`); //INVALID URL, CATCH WILL RUN!
+// 	})
+// 	.then((res) => {
+// 		console.log(res);
+// 		const postId = res.data.topPostId;
+// 		return fakeRequest(`/posts/${postId}`);
+// 	})
+// 	.then((res) => {
+// 		console.log(res);
+// 	})
+// 	.catch((err) => {
+// 		console.log('OH NO!', err);
+// 	});
+
 
  
 
