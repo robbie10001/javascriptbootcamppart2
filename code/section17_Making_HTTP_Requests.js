@@ -29,7 +29,7 @@ JSON & XML
 }
 
 XMLHttpRequests: The Basics 
-*/
+
 //first we make a request object. Then we attach our callbacks
 const firstReq = new XMLHttpRequest(); 
 firstReq.addEventListener('load', function() {
@@ -53,20 +53,39 @@ firstReq.send();
 console.log('Request Sent!')
 
 
-
-/*
 XMLHttpRequests: Chaining Requests
-
-
-*/ 
-
-
+*/
+const firstReq = new XMLHttpRequest(); 
+firstReq.addEventListener('load', function() {
+    const data = JSON.parse(this.responseText);
+    const filmUrl = data.results[0].films[0];
+    //INSIDE OF OUR CALLBACK, WE NEED TO MAKE OUT ADDITIONAL REQUESTS.
+    //WE NEED TO CONTINUE TO DO THIS NESTING WHICH IS A BIG LIMITATION OF XHR'S.
+    const filmRequst = new XMLHttpRequest();
+    filmRequst.addEventListener('load', function() {
+        const filmdata = JSON.parse(this.responseText)
+        const filmTitle = filmdata.title
+        console.log(filmTitle)
+    })
+    filmRequst.addEventListener('error', function(e) {
+        console.log("Error", e);
+    })
+    filmRequst.open('GET', filmUrl);
+    filmRequst.send()
+})
+firstReq.addEventListener('error', () => {
+    console.log('error')
+})
+firstReq.open("GET", 'http://swapi.dev/api/planets');
+firstReq.send(); 
+console.log('Request Sent!')
 
 /*
 A BETTER WAY: FETCH! 
+*/
 
 
-*/ 
+ 
 
 
 

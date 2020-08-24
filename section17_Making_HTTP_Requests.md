@@ -89,14 +89,13 @@ If this request works, myReq.onload will run. If it fails myReq.onerror will run
 
 ![GIF](/gifs/section17/fr1.gif)
 
-
-
-
-
-
-
 ### XMLHttpRequests: Chaining Requests
 
+The limitations with XMLHttpRequests start to be seen once we begin making requests that are dependent upon each other. 
+
+The main reason why people don't like to use XHR's is that it's difficult things tend to get nested and it can become a mess. This is why fetch was created. Fetch is easier to work with because fetch allows for promises which makes making additional requests far easier. 
+
+![images](/images/section17/exampleXMLrequest2.png)
 
 
 ### A BETTER WAY: FETCH! 
