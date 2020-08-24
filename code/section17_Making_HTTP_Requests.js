@@ -187,7 +187,7 @@ fetchNextPlants()
     });
 
 AN EVEN BETTER WAY: AXIOS 
-*/ 
+
 //if we give an invalid url we will get a 404 error. 
 axios.get('http://swapi.dev/api/planets')
 .then((res) => {
@@ -197,13 +197,26 @@ axios.get('http://swapi.dev/api/planets')
     console.log(error)
 })
 
-
-
 /*
 SEQUENTIAL AXIOS REQUESTS
-
-
 */ 
 
+const fetchNextPlants = (url = 'http://swapi.dev/api/planets') => {
+    return axios.get(url);
+}
 
+const printPlants = ({ data }) => {
+    console.log(data);
+    for (let planet of data.results) {
+        console.log(planet.name)
+    }
+    return Promise.resolve(data.next)
+};
 
+fetchNextPlants()
+.then(printPlants)
+.then(fetchNextPlants)
+.then(printPlants)
+.catch((error) => {
+    console.log("Error", error)
+});

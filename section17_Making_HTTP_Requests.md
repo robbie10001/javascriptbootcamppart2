@@ -175,5 +175,12 @@ When we used fetch, we had to manually check the response status code. Fetch doe
 
 ### SEQUENTIAL AXIOS REQUESTS
 
+Lets see how we can use axios to make multiple chained requests. We can do this the following way. 
+
+![images](/images/section17/destructuringaxios1.png)
+
+We can refactor this code even more as follows, 
+
+![images](/images/section17/destructingaxios2.png)
 
 
