@@ -95,7 +95,7 @@ The limitations with XMLHttpRequests start to be seen once we begin making reque
 
 The main reason why people don't like to use XHR's is that it's difficult things tend to get nested and it can become a mess. This is why fetch was created. Fetch is easier to work with because fetch allows for promises which makes making additional requests far easier. 
 
-![images](/images/section17/exampleXMLrequest2.png)
+![images](/images/section17/XMLrequest2.png)
 
 
 ### A BETTER WAY: FETCH! 
