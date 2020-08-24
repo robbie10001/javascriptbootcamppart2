@@ -102,7 +102,7 @@ fetch('http://swapi.dev/api/planets')
 */
 /*
 CHANING FETCH REQUESTS 
-*/ 
+
 //we request all the planets. 
 fetch('http://swapi.dev/api/planets')
 //we then get a response.
@@ -146,9 +146,45 @@ fetch('http://swapi.dev/api/planets')
 
 /*
 REFACTORING FETCH CHAINS 
+*/  
+//we create a function that gets our inital response.
+const checkStatusAndParse = (response) => {
+//if something goes wrong, we throw an error. 
+    if (!response.ok) 
+            throw new Error(`Status Code Error: ${response.status}`);
+//if it works we make the returned data into javascript from json.
+            return response.json();
+};
+//we create another function that takes in our js data.
+const printPlants = (data) => {
+    console.log("loaded 10 more planets")
+//we create a loop that prints out the name of 10 planets.
+    for(let planet of data.results) {
+        console.log(planet.name)
+    }
+//we can use a Promise.resolve(), which is a method, 
+//this will create a new promise for us that is resolved.
+//and allows us access to the next 10 planets we want to look at.
+    return Promise.resolve(data.next)
+}
+//we move our fetch url into a function which we call to access the api.
+const fetchNextPlants = (url = 'http://swapi.dev/api/planets') => {
+    return fetch(url);
+}
 
-
-*/ 
+fetchNextPlants()
+    .then(checkStatusAndParse)
+    .then(printPlants)
+    .then(fetchNextPlants)
+    .then(checkStatusAndParse)
+    .then(printPlants)
+    .then(fetchNextPlants)
+    .then(checkStatusAndParse)
+    .then(printPlants)
+    .catch((err) => {
+        console.log("something didn't work");
+        console.log(err);
+    });
 
 
 

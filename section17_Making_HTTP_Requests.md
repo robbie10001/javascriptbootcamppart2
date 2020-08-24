@@ -146,10 +146,11 @@ Below we have multiple requests that are hapeening one after another. We don't h
 
 ![images](/images/section17/chainingfetchrequests1.png)
 
-
 ### REFACTORING FETCH CHAINS 
 
+In this section, we are going to work on refactoring our code. We can refactor our code by making a number of functions so that instead of repeating our code we are able to just duplicate the functionality that we need. 
 
+![images](/images/section17/refactoringfetch.png)
 
 ### AN EVEN BETTER WAY: AXIOS 
 
