@@ -71,6 +71,29 @@ In JSON every key must be a string. We use colons (:) instead of an object. We c
 
 ### XMLHttpRequests: The Basics
 
+In this section we will make our first requests using the original method for sending requests using Javascript. This is through XMLHttpRequests. This method does not support promises, so we have to use lots of callbacks! These method also can be difficult to understand and has clunky syntax which can be difficut to remember. 
+
+These are objects we can create in the browser that have different methods and we can use them to fetch data from an API to send data somewhere. Basically, they generate a HTTP request. 
+
+![images](/images/section17/exampleXMLrequest1.png)
+
+What we do is make a new object. We create that object by calling new XMLHttpRequest();
+
+Then we provide two callback functions. 
+
+the first to run if the request loads (myReq.onload) and one to run if there's an error (myReq.onerror)
+
+Then we call the request object (in this case myReq) .open the type of request we are making (e.g 'get'), and what url to send the request to (https//whatever) then we finally send the request (myReq.sent());
+
+If this request works, myReq.onload will run. If it fails myReq.onerror will run instead. 
+
+![images](/images/section17/XMLREQUEST1.png)
+
+
+
+
+
+
 
 ### XMLHttpRequests: Chaining Requests
 

@@ -6,7 +6,7 @@ Intro to AJAX
 /*
 JSON & XML
 */
-
+/*
 //example of XML data structure 
 
 //XML can represent any form of information. 
@@ -28,17 +28,29 @@ JSON & XML
     email: 'Todd@gmail.com'
 }
 
-/*
-*/ 
-
-
-
-/*
 XMLHttpRequests: The Basics 
-
-
-*/ 
-
+*/
+//first we make a request object. Then we attach our callbacks
+const firstReq = new XMLHttpRequest(); 
+firstReq.addEventListener('load', function() {
+    console.log('it worked!!!');
+    //we get the JSON data and turn in into javasript using the .parse method.
+    const data = JSON.parse(this.responseText);
+    //we create a loop that goes through every planet in our js object.
+    for(let planet of data.results) {
+        //we then print out the name of every plant from our object
+        console.log(planet.name)
+    }
+    
+})
+firstReq.addEventListener('error', () => {
+    console.log('error')
+})
+//we tell the type of request and where the request is.
+firstReq.open("GET", 'https://swapi.co/api/plantets/');
+//then we tell is to send it. 
+firstReq.send(); 
+console.log('Request Sent!')
 
 
 
