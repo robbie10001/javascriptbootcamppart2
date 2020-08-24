@@ -223,6 +223,17 @@ Because we are chaining and not nesting our responses, we are able to use a sing
 
 ### Refactoring with Promises 
 
+We can refactor out previous code in which we moved a button to the right using a timer if there was room for us to do so. 
+
+##### Previously 
+
+![images](/images/section16/changings2.png)
+
+##### Refactored with Promises 
+
+![images](/images/section16/changings1.png)
+
+
 
 
 
