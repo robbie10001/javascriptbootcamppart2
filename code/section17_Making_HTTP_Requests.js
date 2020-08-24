@@ -3,6 +3,28 @@ Intro to AJAX
 
 
 */ 
+/*
+JSON & XML
+
+
+*/ 
+
+
+
+/*
+XMLHttpRequests: The Basics 
+
+
+*/ 
+
+
+
+
+/*
+XMLHttpRequests: Chaining Requests
+
+
+*/ 
 
 
 

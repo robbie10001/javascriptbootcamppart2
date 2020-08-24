@@ -89,7 +89,7 @@ The goal of this project is to create a library of Javascript concepts and ideas
 ##### Input and Change Events 
 
 
-### AsychronousCode_Callbacks_Promises
+### Section 16-AsychronousCode_Callbacks_Promises
 
 
 ##### THE CALL STACK 
@@ -102,4 +102,18 @@ The goal of this project is to create a library of Javascript concepts and ideas
 ##### Resolving/Rejecting with values 
 ##### The Delights of Promise Chaining 
 ##### Refactoring with Promises 
+
+
+### Section 17-Making_HTTP_Requests 
+
+
+##### Intro to AJAX 
+##### JSON & XML
+##### XMLHttpRequests: The Basics
+##### XMLHttpRequests: Chaining Requests
+##### A BETTER WAY: FETCH! 
+##### CHANING FETCH REQUESTS 
+##### REFACTORING FETCH CHAINS 
+##### AN EVEN BETTER WAY: AXIOS 
+##### SEQUENTIAL AXIOS REQUESTS
 
