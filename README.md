@@ -6,6 +6,115 @@ The goal of this project is to create a library of Javascript concepts and ideas
 
 ## Index 
 
+### sections 1&2-Introduction&-Values&-Variables
+
+##### JS, ECMA, TC39: What Do They Mean? 
+##### GOAL OF THIS SECTION 
+##### PRIMITIVE TYPES 
+##### Introducting Numbers
+##### SIMPLE OPERATIONS 
+##### Variables and Let
+##### UPDATING VARIABLES  
+##### NAMING VARIABLES 
+##### UNARY OPERATORS 
+##### CONST 
+##### VAR 
+##### VARIABLE QUIZ 
+
+### section3-How-To-Modal-Data-Efficiently
+
+##### BOOLEAN INTRO
+##### STRINGS INTRO 
+##### STRING INDICES 
+##### STRING METHODS 
+##### MORE STRING METHODS 
+##### VARIABLE QUIZ
+##### STRING ESCAPES 
+##### STRING TEMPLATE LITERALS 
+##### NULL AND UNDEFINED
+##### The MATH OBJECT AND RANDOM NUMBERS 
+##### TYPEOF OPERATOR
+
+### section4-Controlling-Program-Logic-And-Flow
+
+##### COMPARISON OPERATORS.
+##### DOUBLE EQUALS == 
+##### TRIPLE EQUALS ===
+##### NON EQUALITY (!=) AND NON-STRICT EQUALITY (!==)
+##### CONDITIONAL STATEMENTS 
+##### ELSE IF STATEMENTS AND ELSE STATEMENTS 
+##### NESTING CONDITIONALS 
+##### TRUTHY AND FALSY VALUES 
+##### LOGICAL OPERATORS  
+##### EXAMPLES OF OR || OPERATOR
+##### EXAMPLES OF NOT OPERATOR ! 
+##### OPERATOR PRECEDENCE 
+##### SWITCH STATEMENTS 
+##### TERNARY OPERATOR
+
+### section5-Capture-Collections-Of-Data-With-Arrays
+
+##### CREATING ARRAYS 
+##### ARRAY INDICES 
+##### MODIFYING ARRAYS 
+##### ARRAY METHODS 
+##### ARRAY METHODS2 
+##### MORE ARRAY METHODS! 
+##### INTRODUCTION TO REFERENCE TYPES  
+##### USING CONST WITH ARRAYS 
+##### WORKING WITH NESTED ARRAYS 
+
+### section6-Objects-The-Core-Of-Javascript
+
+##### INTRO TO OBJECTS 
+##### CREATING OBJECT LIERALS 
+##### ACCESSING OBJECT PROPERTIES 
+##### ADDING AND UPDATING PROPERTIES 
+##### NESTED ARRAYS AND OBJECTS 
+##### OBJECTS AND REFERENCE TYPES 
+##### ARRAY/OBJECT EQUALITY
+
+### section7-The-World-Of-Loops
+
+
+##### INTRO TO LOOPS 
+##### FOR LOOPS 
+##### INFINITE LOOPS 
+##### FOR LOOPS AND ARRAYS 
+##### NESTED LOOPS 
+##### INTRO TO WHILE LOOPS 
+##### MORE WHILE LOOPS 
+##### BREAK KEYWORD
+##### loop forevers
+##### FOR..OF INTRO
+##### COMPARING FOR AND FOR...OF 
+##### OR...OF WITH OBJECTS 
+##### FOR...IN LOOPS 
+
+### section8-Writing-Reusable-Code-With-Functions
+
+##### OUR FIRST FUNCTION 
+##### DICE ROLL FUNCTION
+##### INTRODUCING ARGUMENTS
+##### FUNCTIONS WITH MULTIPLE ARGUMENTS
+##### THE RETURN STATEMENT
+##### MORE ON RETURN VALUES 
+##### FUNCTION CHALLENGE 1: PASSWORDVALIDATOR
+##### FUNCTION CHALLENGE 2: AVERAGE
+##### FUNCTION CHALLENGE 3: PANGRAMS
+##### FUNCTION CHALLENGE 4: GET PLAYING CARDS
+
+### section9-An-Advanced-Look-At-Functions
+
+##### FUNCTIONS IN DETAILS 
+##### FUNCTION SCOPE 
+##### FUNCTION EXPRESSIONS 
+##### HIGHER ORDER FUNCTIONS
+##### FUNCTIONS AS ARGUMENTS 
+##### FUNCTIONS AS RETURN VALUES  
+##### CALLBACK FUNCTIONS 
+##### HOISTING 
+
 ### Section 10- Apply Functions To Collections of Data
 
 ##### INTRODUCTION TO ARRAY CALLBACK METHODS
