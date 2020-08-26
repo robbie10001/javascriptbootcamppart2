@@ -117,3 +117,48 @@ The goal of this project is to create a library of Javascript concepts and ideas
 ##### AN EVEN BETTER WAY: AXIOS 
 ##### SEQUENTIAL AXIOS REQUESTS
 
+### Section 18-A-Quick-Overview-of-Async-Functions
+
+##### A Quick Overview of Async Functions 
+##### The Async Keyword 
+##### Error Handling in Async Functions 
+##### Multiple Awaits 
+##### Parrallel VS Sequential Requests 
+##### Refactoring with Promise All 
+
+### Section 19-Prototypes,-Classes-And-The-New-Operator
+
+##### What on Earth are Protoypes?
+##### An Intro to OOP 
+##### Factory Functions 
+##### Constructor Functions 
+##### JS CLASSES - SYNTACTICAL SUGAR 
+##### A BIT MORE PRACTICE WITH CLASSES 
+##### EXTENDS, SUPERS AND SUBCLASSES 
+
+### Section 20-Drawing-Animations
+
+
+##### Event-Based Architeture 
+##### Class-Based Implementation 
+##### Binding Events in a Class 
+##### Reminder on "This"
+##### Determining the Value of "This"
+##### Solving the "This" issue
+##### Starting and Pausing the Time 
+##### Where to store data? 
+##### DOM-CENTRIC APPROACH 
+##### GETTERS AND SETTLERS 
+##### STOPPING THE TIMER 
+##### NOTIFYING THE OUTSIDE WORLD 
+##### ONTICK AND ONCOMPLETE
+##### EXTRACTING TIMER CODE
+##### INTRODUCING SVG'S
+##### RULES OF SVG'S 
+##### ADVANCED CIRCLE PROPERTIES 
+##### THE SECRET TO THE ANIMATION
+##### FIRST PASS ON THE ANIMATION 
+##### SMOOTHING THE ANIMATION 
+##### ADJUSTING BY AN EVEN INTERVAL 
+##### USING ICONS 
+##### STYLING AND WRAPUP 
