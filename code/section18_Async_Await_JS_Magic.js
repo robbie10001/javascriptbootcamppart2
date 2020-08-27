@@ -84,7 +84,7 @@ adding('e', 5)
 /*
 The Await Keyword
 */ 
-
+/*
 //this function looks like its runs in order. 
 async function getPlanets() {
     //we get our data from the api. We then wait until this is resolved. 
@@ -99,6 +99,47 @@ async function getPlanets() {
 }
 
 getPlanets()
+*/
+
+/*
+Error Handling in Async Functions 
+*/ 
+async function starwarsPlanets() {
+    const resolvePromise = await axios.get('http://swapi.dev/api/planetss');
+    console.log(resolvePromise.data);
+}
+
+starwarsPlanets().catch((error) => {
+    console.log("We have an error", error)
+})
+//The spelling of our API call is wrong. This causes a .catch error. 
+//the following is consoled: 
+    //We have an error Error: Request failed with status code 404
+        //at e.exports (spread.js:25)
+        //at e.exports (spread.js:25)
+        //at XMLHttpRequest.l.onreadystatechange (spread.js:25)
+
+async function getStarWars() {
+    //almost like an if/else statement we use a try and catch. 
+    //If the try is successful, we get the data. 
+    try {
+    const resolvePromise = await axios.get('http://swapi.dev/api/planetss');
+    console.log(resolvePromise.data);
+    //if we have an error we hit the catch are recieve a console response. 
+    } catch (error) {
+        console.log("We have an error", error)
+    }
+}
+getStarWars()
+//This function returns the exact same information as the previous method.
+//For both sucessful calls and failed calls. See Above. 
+//We get the same behaviour although these methods are technically different. 
+//they are different because in our second example, 
+//we are going to catch any errors only within the specific async function. 
+//in the first example, we could have multiple functions that are returning promises.
+//So when we have one function we are calling, it doesn't really matter. 
+//But in other cases, the first example, is more of a backup, that will catch multiple possible errors. 
+
 
 
 

@@ -46,14 +46,23 @@ We can only use await within an async function. The await keyword gives us some 
 
 ![images](/images/section18/theawaitkeyword1.png)
 
-
+This is great, very short easy way to wait for an anchyronous operation to finish before running the next line. But what about if our promise is not resolved and is rejected? This is what we are going to look at in the next section. 
 
 ### Error Handling in Async Functions 
 
+In order to handle errors we have a couple of options. 
 
+1. The first is to chain onto our function call a .catch. For example, 
 
+![images](/images/section18/errorhandlingasync1.png)
+
+2. The second way to do it, is if you don't want to use .catch and pass in a callback function. In our async function, we can add a try and catch block. 
+
+![images](/images/section18/errorhandlingsync2.png)
 
 ### Multiple Awaits 
+
+In the section we are going to look at how we can make multiple requests in a single async function using AWAITS and Async. 
 
 
 
