@@ -34,6 +34,18 @@ If you thrown an exception, instead that promise will be rejected with that valu
 
 This is not all we need to know about async functions. This is the async keyword. Next we will see the await keyword that makes things even more magical. 
 
+### The Await Keyword 
+
+We have the async keyword which we use to delcare an async function, it's basically a fancy way to wrap our function in a promise. 
+
+Await is really magical, if we put the await keyword inside of an async function, it will pause the execution of a function while it waits for a promise to be resolved. 
+
+We can await something without needing to use .next, we can run code after an ansyrchronous operation, without needing to nest things with callbacks. 
+
+We can only use await within an async function. The await keyword gives us some nice syntactical sugar when we are using promises. 
+
+![images](/images/section18/theawaitkeyword1.png)
+
 
 
 ### Error Handling in Async Functions 

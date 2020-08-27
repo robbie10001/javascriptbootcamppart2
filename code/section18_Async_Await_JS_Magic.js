@@ -36,6 +36,7 @@ greeter().then((val) => {
 //So we can chain on .then because greeter is going to return a promise. 
 */
 
+/*
 
 //if we call this as a regular function, we will see that the logic works.
 //if we call this function with 3 and 4, everything works fine. 
@@ -80,15 +81,25 @@ adding('e', 5)
         console.log('Promise resolved with', error);
     });
 
-//2 MINUTES 30
-
-
-
 /*
-Error Handling in Async Functions 
-
-
+The Await Keyword
 */ 
+
+//this function looks like its runs in order. 
+async function getPlanets() {
+    //we get our data from the api. We then wait until this is resolved. 
+    //axios.get returns a promise.
+    const resolution = await axios.get('http://swapi.dev/api/planets')
+    //by putting the await keyword in, javascript will wait until the axios.get promise. 
+    //and the value they its resolved with will be stored in our variable. 
+    //In this case, const resolution.
+    //then we console the data that we have stored in our variable
+    //As we can see in this example, we don't have to use .then 
+    console.log(resolution.data)
+}
+
+getPlanets()
+
 
 
 

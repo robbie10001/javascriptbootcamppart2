@@ -230,6 +230,7 @@ The goal of this project is to create a library of Javascript concepts and ideas
 
 ##### A Quick Overview of Async Functions 
 ##### The Async Keyword 
+##### The Await Keyword
 ##### Error Handling in Async Functions 
 ##### Multiple Awaits 
 ##### Parrallel VS Sequential Requests 
