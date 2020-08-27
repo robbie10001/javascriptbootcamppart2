@@ -103,7 +103,7 @@ getPlanets()
 
 /*
 Error Handling in Async Functions 
-*/ 
+
 async function starwarsPlanets() {
     const resolvePromise = await axios.get('http://swapi.dev/api/planetss');
     console.log(resolvePromise.data);
@@ -141,14 +141,158 @@ getStarWars()
 //But in other cases, the first example, is more of a backup, that will catch multiple possible errors. 
 
 
-
-
-
 /*
 Multiple Awaits 
-
-
 */ 
+const moveX = (element, amount, delay) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const bodyBoundary = document.body.clientWidth;
+			const elRight = element.getBoundingClientRect().right;
+			const currLeft = element.getBoundingClientRect().left;
+			if (elRight + amount > bodyBoundary) {
+				reject({ bodyBoundary, elRight, amount });
+			}
+			else {
+				element.style.transform = `translateX(${currLeft + amount}px)`;
+				resolve();
+			}
+		}, delay);
+	});
+};
+
+//here we are setting a variable theButton to the dom element in our html file which is a button.
+const theButton = document.querySelector('button');
+//here we create an async function. 
+async function animateRight(element, amount, ){
+    //here we call moveX which returns a promise.
+    //we then pass in the element, an amount (100px) for time (every second)
+    await moveX(element, amount, 1000)
+    //if we want the line above to finish before we move on to the next moveX, 
+    //we don't need a .then, we can just await the first one and do the same thing again.
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+    await moveX(element, amount, 1000)
+//we haven't error handled if we run out of room in our viewscreen and the promise is rejected. 
+
+}
+//using the .catch we can now error handle when we run out of room in the viewport.
+//when we hit the catch, we will make it that we animate the other way back to the left.
+animateRight(theButton).catch((error) => {
+    console.log("All Done")
+    animateRight(element, -100);
+})
+
+
+// const btn = document.querySelector('button');
+// moveX(btn, 100, 1000)
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.catch(({ bodyBoundary, amount, elRight }) => {
+// 		console.log(`Cannot Move! Body is ${bodyBoundary}px wide`);
+// 		console.log(`Element is at ${elRight}px, ${amount}px is too large!`);
+// 	});
+
+//This function moves an element "amount" number of pixels after a delay.
+//If the element will stay on screen, we move the element and call the onSuccess callback function
+//If the element will move off screen, we do not move the element and instead call the onFailure callback
+// const moveX = (element, amount, delay, onSuccess, onFailure) => {
+// 	setTimeout(() => {
+// 		const bodyBoundary = document.body.clientWidth;
+// 		const elRight = element.getBoundingClientRect().right;
+// 		const currLeft = element.getBoundingClientRect().left;
+// 		if (elRight + amount > bodyBoundary) {
+// 			onFailure();
+// 		}
+// 		else {
+// 			element.style.transform = `translateX(${currLeft + amount}px)`;
+// 			onSuccess();
+// 		}
+// 	}, delay);
+// };
+
+// LOOK AT THIS UGLY MESS!
+// moveX(
+// 	btn,
+// 	300,
+// 	1000,
+// 	() => {
+// 		//success callback
+// 		moveX(
+// 			btn,
+// 			300,
+// 			1000,
+// 			() => {
+// 				//success callback
+// 				moveX(
+// 					btn,
+// 					300,
+// 					1000,
+// 					() => {
+// 						//success callback
+// 						moveX(
+// 							btn,
+// 							300,
+// 							1000,
+// 							() => {
+// 								//success callback
+// 								moveX(
+// 									btn,
+// 									300,
+// 									1000,
+// 									() => {
+// 										//success callback
+// 										alert('YOU HAVE A WIDE SCREEN!');
+// 									},
+// 									() => {
+// 										//failure callback
+// 										alert('CANNOT MOVE FURTHER!');
+// 									}
+// 								);
+// 							},
+// 							() => {
+// 								//failure callback
+// 								alert('CANNOT MOVE FURTHER!');
+// 							}
+// 						);
+// 					},
+// 					() => {
+// 						//failure callback
+// 						alert('CANNOT MOVE FURTHER!');
+// 					}
+// 				);
+// 			},
+// 			() => {
+// 				//failure callback
+// 				alert('CANNOT MOVE FURTHER!');
+// 			}
+// 		);
+// 	},
+// 	() => {
+// 		//failure callback
+// 		alert('CANNOT MOVE FURTHER!');
+// 	}
+// );
+
 
 
 

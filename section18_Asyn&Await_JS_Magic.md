@@ -64,7 +64,15 @@ In order to handle errors we have a couple of options.
 
 In the section we are going to look at how we can make multiple requests in a single async function using AWAITS and Async. 
 
+In this section, we are going to get more practice with ASYNC and AWAIT. We are using code that we have used previously in section16 Asychrnous Code, Callbacks and Promises. 
 
+Everything we see with Async and Await, are promises behind the scenes.
+
+The moveX function that we created in section 16, returns a promise and in this promise, will move an element a certain number of pixels horizontally depending on the number we pass in and then uses a delay before that operation actually takes place. The promise is rejected if we end up not having enough room in the browser to move the specified amount. 
+
+This is how we can have the same functionality using using AWAIT and ASYNC instead.
+
+![images](/images/section18/multipleawaits2.png)
 
 
 ### Parrallel VS Sequential Requests 
