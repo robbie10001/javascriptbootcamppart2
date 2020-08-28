@@ -77,10 +77,36 @@ This is how we can have the same functionality using using AWAIT and ASYNC inste
 
 ### Parrallel VS Sequential Requests 
 
+In this section, we are going to talk about an important distinction that has to do with using AWAIT inside an async function. 
 
+To illustraight this point, we are going to use AXIOS to make some requests, this will take some time, we will use an ASYNC function to handle this and we will AWAIT the request. We are going to work with a different API to the starwars one. We are going to use the POKE API. 
+
+##### Example of a sequential request.
+
+![images](/images/section18/pokemon1.png)
+
+##### Example of a parallel request.
+
+The difference in the example is that in the first example we are fully awaiting for the promise we get from the API to be resolved before we move on. In the second example, we are making all of our calls to the API at the same time. We are not awaitng the request we make to the API to finish before we move on to the next line of code. 
+
+![images](/images/section18/pokemon2.png)
+
+We are going to look at a much more understandable visualisation of the difference between awaiting in sequence versus awaiting in parallel...
+
+![images](/images/section18/colour1.png)
+
+![GIF](/gifs/section18/colour1.gif)
+
+Right now, the above code is happening in sequence. The first thing finishes then the second then the third then the fourth. This is what we want in a use case like this. However, if these were requests, taking a second each and they are not related, we might not want that. In the next example, we can see how this would work if we ran it in parallel as opposed to in sequence. With requests, if you don't need them to run is sequence run them in parallel! 
+
+![images](/images/section18/colour2.png)
+
+![GIF](/gifs/section18/colour2.gif)
 
 
 ### Refactoring with Promise All 
+
+
 
 
 

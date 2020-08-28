@@ -293,13 +293,8 @@ animateRight(theButton).catch((error) => {
 // 	}
 // );
 
-
-
-
 /*
 Parrallel VS Sequential Requests 
-
-
 */ 
 
 
@@ -309,6 +304,91 @@ Refactoring with Promise All
 
 
 */ 
+//HERE we desclare an async function. 
+//we create three variables which use the await keyword to get the data from the api.
+//
+async function get3Pokemon(){
+//it's important to note that each of a variables uses await. 
+//we are going through them one by one. The first request will resolve before the second takes place
+//The second will finish before the third request is make. 
+//the requests are happening in sequence. 
+//The first has to finish completely before the second one will take place.
+//our requests are not getting sent off at the same time. 
+//Because these requests are not dependant on each other, they really don't need to be made one by one. 
+//In this cases, it would be better if we made it that our requests were made in parallel to each other.
+    const poke1 = await axios.get("https://pokeapi.co/api/v2/pokemon/1");
+    const poke2 = await axios.get("https://pokeapi.co/api/v2/pokemon/2");
+    const poke3 = await axios.get("https://pokeapi.co/api/v2/pokemon/3");
+//we then console out the different names of the three different pokemon we recieved in our api call.  
+    console.log(poke1.data.name)
+    console.log(poke2.data.name)
+    console.log(poke3.data.name)
+}
+//get3Pokemon()
 
+//In order to make our request occur in parrallel, we firstly remove the AWAIT keyword from our variable definitions.
+//We will have to use AWAIT just not in our variables as we did in the first example. 
+async function get3PokemonParallel(){
+    //we are not using await anymore when we send off our request to the API.
+    //we are still sending of our request here and recieving a promise. 
+    //in the first example, our variable awaits a response so contains the data of the API call.
+    //In this example, because we do not use AWAIT our variable is a promise.
+    //It is not a variable storing the value like the first example.
+        const promise1 = axios.get("https://pokeapi.co/api/v2/pokemon/1");
+        const promise2 = axios.get("https://pokeapi.co/api/v2/pokemon/2");
+        const promise3 = axios.get("https://pokeapi.co/api/v2/pokemon/3");
+        //instead we declare the await keyword after our variables
+        //This is a big change from the original example, in terms of how this is working behind the scenes.
+        //Here we are saying AWAIT THE RESPONSE that comes back
+        //In order to store the value of our API request, we can await the resolution of a promsies here,
+        //and save the data we recieve to a new variable.
+        const poke1 = await promise1
+        const poke2 = await promise2
+        const poke3 = await promise3 
 
+        console.log(poke1.data.name)
+        console.log(poke2.data.name)
+        console.log(poke3.data.name)
+    }
+//Our requests are being sent at roughly the same time and we are awaiting the response we get from the API. 
+    get3PokemonParallel()
 
+//we create function that takes in two arguments. 
+//a color argument and a delay argument. 
+function changeBodyColour(color, delay) {
+//we create a callback function that creates and returns a new promise.
+    return new Promise((resolve, reject) => {
+//we create a timeout function that after 1 second changes the color of our background.
+        setTimeout(() => {
+            document.body.style.backgroundColor = color;
+            resolve();
+        }, delay)
+    });
+}
+
+//In this example, the whole code only take a second to run everything, 
+//whereas the previous code took a second for each change of colour. 
+/*
+async function lightShow() {
+    const p1 = changeBodyColour('teal', 1000)
+    const p2 = changeBodyColour('blue', 1000)
+    const p3 = changeBodyColour('red', 1000)
+    const p4 = changeBodyColour('black', 1000)
+    await p1
+    await p2
+    await p3
+    await p4
+}
+
+lightShow();
+*/
+
+async function lightShow() {
+    await changeBodyColour('teal', 1000)
+    await changeBodyColour('blue', 1000)
+    await changeBodyColour('red', 1000)
+    await changeBodyColour('black', 1000)
+
+}
+
+lightShow()
