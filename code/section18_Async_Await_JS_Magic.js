@@ -392,3 +392,22 @@ async function lightShow() {
 }
 
 lightShow()
+
+async function getThemPokemon() {
+    const promise1 = axios.get("https://pokeapi.co/api/v2/pokemon/1");
+    const promise2 = axios.get("https://pokeapi.co/api/v2/pokemon/2");
+    const promise3 = axios.get("https://pokeapi.co/api/v2/pokemon/3");
+    const results = await Promise.all([promise1, promise2, promise3])
+    //this returns to us another array, we returns three response objects.
+    //these are the values that our promises are returned with thanks to axios. 
+    console.log(results)
+    //here we pass in a funciton that goes through our array,
+    //this function and for loop, give us the names of the three pokemon that we wanted.
+    printPokemon(results);
+}
+function printPokemon(results) {
+    for(let pokemon of results) {
+        console.log(pokemon.data.name)
+    }
+}
+getThemPokemon();

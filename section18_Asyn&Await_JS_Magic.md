@@ -106,7 +106,11 @@ Right now, the above code is happening in sequence. The first thing finishes the
 
 ### Refactoring with Promise All 
 
+The last thing we are going to look at in this section, is a nice and clean way of sending requests in parallel, and just waiting for them to be all back before we do something. If we want to refactor our code, we can do this using a promise helper method called Promise.all().
 
+Promise.all() accepts an array of promises. So in our example, we can just pass all of our promises into the array. We can then just await our Promise.all array. 
+
+![images](/images/section18/getthempokemon.png)
 
 
 
