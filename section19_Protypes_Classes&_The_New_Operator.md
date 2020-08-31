@@ -43,8 +43,11 @@ Prototypes are important to understand. The idea is that we have a single object
 
 ### An Intro to OOP 
 
+Object Orientated Programming always comes back to an idea. The idea that organising our code, designing and structuring our application by breaking things up into decrete patterns of objects. When we say patterns of objects, you can also think of recipies for objects. 
 
+The idea of having a repeatable recipie for other objects to be based off of is central to everything we will see in this section. 
 
+OOP is the idea of creating classes or object templetes that contain the definitions of the properties and methods for a given instance of that class. 
 
 ### Factory Functions 
 

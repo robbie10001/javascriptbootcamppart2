@@ -7,7 +7,6 @@ String.prototype.craig = function() {
 
 const robbie = 'robbie';
 
-
 /*
 An Intro to OOP 
 
