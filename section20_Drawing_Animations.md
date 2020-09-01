@@ -80,16 +80,21 @@ Whenever we create an instance of our Class Timer, we are going to have a constr
 ![images](/images/section20/jssection201.png)
 
 
-
 ### Reminder on "This"
 
+In this section we are going to go over the value of .this is a class. 
 
+#### index.js 
+
+![images](/images/section20/whatsthis.png)
 
 
 
 ### Determining the Value of "This"
 
+There are three ways to determine the value of .this within a function.
 
+![images](/images/section20/thevalueofthis.png)
 
 
 ### Solving the "This" issue
