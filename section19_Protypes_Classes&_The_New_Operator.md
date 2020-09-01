@@ -52,12 +52,43 @@ OOP is the idea of creating classes or object templetes that contain the definit
 ### Factory Functions 
 
 
+Above we have two functions that are perfectly fine as is. 
 
+
+![images](/images/section19/factory1.png)
+
+However, if we wanted to make a nice little object from which we can convert back and forth colours from rgb to hex without needing to pass in numbers each time.
+
+We could use a factory function that would make us an object, that automatically had a hex method and an rgb method and it stored the r, g and b values as properties on the objects. We could do this through a function! 
+
+![images](/images/section19/factoryfunction2.png)
+
+What we can do is use the .this keyword in order to get the information we want from our color object. We can do this the following way. 
+
+![images](/images/section19/factoryfunction3.png)
+
+We can use deconstruction to make our code even more clean using the .this keyword. 
+
+![images](/images/section19/factoryfunction4.png)
+
+We can use this same technique to add a function to get our hex value. 
+
+![images](/images/section19/factoryfunction5.png)
+
+In this section we have seen as make a function, which makes us an empty object, we starts empty. We add some properties to this function based of some properties that we pass to the function as arguments then we add some methods and return the object. 
+
+This is called a factory function and it does work. This is one way of making objects based of a pattern. In this example, we have defined a pattern for color. 
+
+We call make colour with some arguments const firstColor = makeColor(255, 255, 150);
+
+And we can back an object that contains three properties which are numbers (r: 255, g: 255, b: 150) and two methods (hex & rgb). 
+
+Factory functions are not the main way people make objects based of patterns.
 
 
 ### Constructor Functions 
 
-
+In this section, 
 
 
 ### JS CLASSES - SYNTACTICAL SUGAR 
