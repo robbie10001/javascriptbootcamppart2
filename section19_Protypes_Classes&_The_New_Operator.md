@@ -144,9 +144,18 @@ The idea of this section is to focus on the interplay of the .this keyword, the 
 ![images](/images/section19/scream2.png)
 
 
+### EXTENDS, SUPER AND SUBCLASSES 
 
+The keywords extend and super, both have to do with subclassing. This is esentially about inheritence and sharing functionality between classes. For this video we are going to make it very basic. 
 
-### EXTENDS, SUPERS AND SUBCLASSES 
+##### Extends
 
+![images](/images/section19/finalsection1.png)
 
- 
+In this example, our classes share a lot of the same code. It would be better if we were able to have another class by which these classes could inherit the attributes that they share. 
+
+![images](/images/section19/finalsection2.png)
+
+##### Super
+
+![images](/images/section19/finalsection3.png)

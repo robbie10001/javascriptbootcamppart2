@@ -264,7 +264,7 @@ const colour2 = new Color(255, 255, 255, "white");
 
 /*
 A BIT MORE PRACTICE WITH CLASSES 
-*/ 
+
 class Color {
 	constructor(r, g, b, name) {
 		this.r = r;
@@ -358,12 +358,121 @@ const white = new Color(255, 255, 255, 'white');
 
 
 
-
+*/ 
 /*
 EXTENDS, SUPERS AND SUBCLASSES 
 
 
+
+
+//FIRST EXAMPLE - we are sharing a load of code, 
+//it would be better if this was inherited rather than written twice. 
+class Dog {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    eat() {
+        return `${this.name} is eating!`;
+    }
+    bark() {
+        return "WOOOOF"
+    }
+}
+
+const frankie = new Dog("Frankie", 9)
+//if we call frankie we get Dog {name: "Frankie", age: 9}
+
+class Cat {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    eat() {
+        return `${this.name} is eating!`;
+    }
+    meow() {
+        return "MEOWW!"
+    }
+}
+
+const mish = new Cat("Mish", 11)
+
+//if we call mish we get Cat {name: "Mish", age: 11}
+
+const frankie = new Dog("Frankie", 9)
+//if we call frankie we get Dog {name: "Frankie", age: 9}
+
+
+class Pet {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    eat() {
+        return `${this.name} is eating!`; 
+    }
+}
+//the extends keyword allows us to tell our children functions to inherit,
+//the properties of the parent.
+//because we have extended from Pet, we don't need our own constructor on these classes.
+//they inherit the constructor from the Pet class. 
+class Cat extends Pet {
+    meow() {
+        return "MEOWW!"
+    }
+}
+class Dog extends Pet {
+    bark() {
+        return "WOOOOF"
+    }
+}
+
+const toby = new Dog("Toby", 12)
+//if we return toby we get the following: Dog {name: "Toby", age: 12}
+//we also in proto get the class Pet, this contains the bark function, the eat function,
+//and the constructor from our Pet class.
+
+const archie = new Cat("archie", 4)
+//if we return archie we get the following: Cat {name: "archie", age: 4}
+//we also get the proto of Pet, this contains the MEOW function and the rest is the same as the dog.
+
 */ 
 
+//In this example, Pet acts like a parent and Cat and Dog act as children.
+class Pet {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;›
+    }
+    eat() {
+        return `${this.name} is eating!`; 
+    }
+}
+//if we wanted Cat to have it's own information, seperate from Pet, 
+//we could use the Super keyword. 
+class Cat extends Pet {
+    constructor(name, age, livesLeft = 9) {
+//we already have the name and age information from the Pet class,
+//all we really want is the information of livesleft.
+//in order to achieve this, we can use the SUPER keyword. 
+//Super references the class that we are extending from. 
+//So within our Cat class, if we call super, it is going to call the constructor in the Pet class.
+    super(name, age)
+    this.livesLeft = livesLeft;
+//so here we have reused the functionality from the constructor in our class Pet
+//but also added in our own functionality for the class Cat. 
+//so SUPER is a reference to the SUPER class, in this case, PET
+    }
+    meow() {
+        return "MEOWW!"
+    }
+}
+class Dog extends Pet {
+    bark() {
+        return "WOOOOF"
+    }
+}
 
-
+const toby = new Dog("Toby", 12)
+const archie = new Cat("archie", 4)
