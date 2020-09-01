@@ -113,6 +113,11 @@ There are three ways to determine the value of .this within a function.
 
 In order to solve our problem we have, where we need to call start() and have it always give us the same value of 'this' we are going to simply make sure that the value of 'this' is either determined through the use of arrow function or through the use of calling .bind() .call() or .apply(). 
 
+##### First Solution Using An Arrow Function.
+
+![images](/images/section20/firstsolution.png)
+
+##### Second Solution Using 'Bind', 'Call' or 'Apply
 
 
 
