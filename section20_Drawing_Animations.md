@@ -96,8 +96,22 @@ There are three ways to determine the value of .this within a function.
 
 ![images](/images/section20/thevalueofthis.png)
 
+##### Determining the value of "This" within an arrow function.
+
+![images](/images/section20/determinearrow.png)
+
+##### Did you call "bind", "call" or "apply" to the function when you invoked it?
+
+![images](/images/section20/bindcall1.png)
+
+##### all other cases
+
+![images](/images/section20/bindcall2.png)
+
 
 ### Solving the "This" issue
+
+In order to solve our problem we have, where we need to call start() and have it always give us the same value of 'this' we are going to simply make sure that the value of 'this' is either determined through the use of arrow function or through the use of calling .bind() .call() or .apply(). 
 
 
 
