@@ -135,7 +135,14 @@ The methods that we have added (for example rgb()) are added automatically to th
 
 ### A BIT MORE PRACTICE WITH CLASSES 
 
-In this section, we are going to continue to add onto our class from the previous section.
+In this section, we are going to create a class that converts a rgb colour into a hsl colour. Hue Saturation and Lightness (HSL), is a very interesting colour system. The first bit is the hue and we give this a value from 0 to 360. Then we have saturation which we give as a percentage from 0 to 100. Then we have lightness which is also a percentage from 0 to 100. For example hsl(260, 80%, 40%). So let's make a function to create HSL values and lets store these values on our class instances so we can reuse them for other functions.
+
+The idea of this section is to focus on the interplay of the .this keyword, the idea of the constructor adding in values to .this as properties and then using the NEW keyword to create new colors. 
+
+![images](/images/section19/scream1.png)
+
+![images](/images/section19/scream2.png)
+
 
 
 
