@@ -248,7 +248,9 @@ The goal of this project is to create a library of Javascript concepts and ideas
 
 ### Section 20-Drawing-Animations
 
-
+##### Welcome to Part 2
+##### App Overview
+##### Project Setup
 ##### Event-Based Architeture 
 ##### Class-Based Implementation 
 ##### Binding Events in a Class 
