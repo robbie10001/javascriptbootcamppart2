@@ -71,7 +71,13 @@ Whenever we create an instance of our Class Timer, we are going to have a constr
 
 ### Binding Events in a Class 
 
+##### index.html 
 
+![images](/images/section20/htmlsection201.png)
+
+#### index.js 
+
+![images](/images/section20/jssection201.png)
 
 
 
