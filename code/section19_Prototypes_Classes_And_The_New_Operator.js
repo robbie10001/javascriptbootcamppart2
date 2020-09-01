@@ -98,9 +98,86 @@ firstColor.hex()//"#23ff96"
 
 /*
 Constructor Functions 
-
-
 */ 
+//1. Creates a blank, plain Javascript Object
+//2. Links (sets the constructor of) this object to another object
+//3. Passes the newly created object from step 1 as the this context;
+//4. returns this if the function doens't return its own object. 
+
+//By defining Color with a capital, we are signalling that we are not creating a normal function.
+//instead we are creating a function that helps us create objects. It's a constructor function.
+//In our constructor function we pass in r, g & b
+function Color(r, g, b) {
+    this.r = r;
+    this.g = g;
+    this.b = b;
+}
+//When we call this Color function with the new keyword, and pass in values. 
+//if we don't use the new keyword, this refers to the window object.
+//It is going to create a new object.
+//And it's going to set the this keyword to this new object.
+//so we will be adding r, g, b to that new object. 
+//then it returns the value of .this at the end.
+new Color(255, 40, 100);
+//so this is doing a similar thing to the last example although it is happening implicitly. 
+//An object is being created - for example, const 0 = {};
+//this - is refering to the newly created empty object.
+//and then the three properties are added to the created object. 
+//and at the end we are returned the now populated object. 
+
+
+
+function Coloring(r, g, b) {
+    this.r = r;
+    this.g = g;
+    this.b = b;
+}
+//what we do is define our method on the PROTOTYPE outside the constructor function.
+Coloring.prototype.rgb = function() {
+ const {r, g, b} = this;
+ return `rgb(${r}, ${g}, ${b})`;
+};
+//We have now made this constructor function for Coloring, anytime we call it with NEW keyword
+//it makes us a new object, sets the constructor to Colouring of that object
+//and sets the value of THIS to that new empty object. 
+//we can add properties to it and returns that object. 
+
+const color1 = new Coloring(40, 60, 60)
+//if we have a look at this method, we can see that the rgb function is not defined on the object itself.
+//instead, the function is defined within the proto in the constructor. 
+//we can still call color1.rgb() and get our result. 
+//however we don't have to have multiple instances of it now. 
+//This is more programmatic than the factory approach. 
+
+
+function Col(r, g, b) {
+    this.r = r;
+    this.g = g;
+    this.b = b;
+}
+
+Col.prototype.rgb = function() {
+ const {r, g, b} = this;
+ return `rgb(${r}, ${g}, ${b})`;
+};
+
+Col.prototype.hex = function() {
+    const {r, g, b} = this;
+    return `#` + ((1 << 25) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+};
+//when we console these out we see that we get different results. 
+//This is because the value of THIS is different inside these methods. 
+//but when we call coloring1.hex === coloring2.hex...we get true. 
+//They are pointing to the same thing! which are defined on the prototype!
+const coloring1 = new Col(40, 60, 60) //"#283c3c"
+const coloring2 = new Col(50, 120, 50)//"#327832"
+
+
+
+
+
+
+
 
 
 

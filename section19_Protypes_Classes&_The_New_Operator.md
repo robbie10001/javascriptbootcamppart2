@@ -88,8 +88,29 @@ Factory functions are not the main way people make objects based of patterns.
 
 ### Constructor Functions 
 
-In this section, 
+In this section, we are going to talk about why factory functions are not commonly used, and why instead, we use what's called the constructor pattern or the constructor function. 
 
+The short coming of factory functions, is not a huge one but it's important to understand. Everytime we make a new colour object, we start with an empty object and have three unique properties that are added directly to the object but then the two functions are recreated and added to each unique colour object, so each colour object has its own rgb and hex functions. It is not very programmatic to have a unique copy of these functions everytime. 
+
+When we called methods like .toUpperCase() we are referencing a single function. We are not creating multiple different versions of the same code. 
+
+This is where the constructor function enters. The constructor function is a weird part of javascript. 
+
+![images](/images/section19/construct1.png)
+
+When using the NEW keyword, another thing happens. If we look at the object that we have created and look under proto, we can see that it has a constructor property set to color. This is the second thing in the above code snippet (Links (sets the construct of) this object to another object) using whatever we named the function. So in the above example, the constructor is set to our Color function. This allows us to add methods, NOT to the individual objects, but to the PROTOYPE.
+
+We can achieve this the following way:
+
+![images](/images/section19/construct2.png)
+
+Now when now longer will create new instances everytime we make a new color. They new share the same function which is more programmatic. 
+
+![images](/images/section19/construct3.png)
+
+The main take away from this section is that the NEW keyword, does these mysterious operations that changes how are functions operate. We also looked at how we can add properties to our method prototypes so that we only need to define them once, rather than on each individual function. 
+
+This syntax is now very good, this is why the class keyword and the new class keyword syntax was introduced, which we will see in the next section. 
 
 ### JS CLASSES - SYNTACTICAL SUGAR 
 
