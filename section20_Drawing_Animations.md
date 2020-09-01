@@ -22,17 +22,51 @@ Whenver a user clicks on the number that is counting down, it will turn into a t
 
 ### Project Setup
 
+For my projects, i'm going to create a new route for each one. For example, to access the code for this particular project the url is localhost:5500/code/timer/
+
+In this section we are just going to make some boilerplate and make sure our html and js files are connected. 
+
+##### index.html
+
+![images](/images/section20/indexhtml1.png)
+
+##### index.js 
+
+![images](/images/section20/indexjs1.png)
 
 
 ### Event-Based Architeture 
 
+In total, we are going to have a timer and an animated border around it.
+Our program does two things. It displays a timer and it shows an animated border around the timer. 
 
+The timer and the border around the timer are really two different parts of our program. 
 
+For our timer we could possibly have the following implementation. 
+
+![images](/images/section20/timer1.png)
+
+Instead of doing it as one big bunch of code, we should seperate our code into different and seperate blocks. 
+
+One way to do this would be the following: 
+
+![images](/images/section20/possible1.png)
 
 
 ### Class-Based Implementation 
 
+To implement our design, we are going to use a class. We don't have to do this, but a class makes sense in this case. 
 
+In order to implement our timer we are going to do the following: make a class Timer which has four methods, start, pause, onDurationChange and tick. 
+
+Our timer class will be fully focused on the counter the play button and the pause button. It will be a completely distinct piece of code from our border. 
+
+1. When a user clicks on the play button, our start method will take effect.
+2. When a user clicks on the pause button, our pause method will take effect.
+3. When a user clicks on the actual countdown number we will invoke the onDurationChange method. 
+4. Our tick method count-down every second and update the time on our timer.
+
+Whenever we create an instance of our Class Timer, we are going to have a construction which will take three arguments. We are going to reference some dom element that will serve as our text input. We are going to pass some dom-element that will serve as a start button and thirdly, pass in an argument for our pause button. 
 
 
 ### Binding Events in a Class 
