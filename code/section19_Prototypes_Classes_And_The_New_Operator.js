@@ -107,6 +107,8 @@ Constructor Functions
 //By defining Color with a capital, we are signalling that we are not creating a normal function.
 //instead we are creating a function that helps us create objects. It's a constructor function.
 //In our constructor function we pass in r, g & b
+
+/*
 function Color(r, g, b) {
     this.r = r;
     this.g = g;
@@ -172,20 +174,94 @@ Col.prototype.hex = function() {
 const coloring1 = new Col(40, 60, 60) //"#283c3c"
 const coloring2 = new Col(50, 120, 50)//"#327832"
 
-
-
-
-
-
-
-
+*/
 
 
 /*
 JS CLASSES - SYNTACTICAL SUGAR 
-
-
 */ 
+/*
+//This creates a class
+class Color {
+    //next WE ALWAYS add in a constructor
+    //a constructor is a function that will execute immediately whenever a new color is created.
+    //the constructor will run immediately whenever we call a new instance of our class in this case Color.
+    constructor(r, g, b, name) {
+    //typically in the constructor we are going to access .this
+    //the below values, are going to be added as properties on our Color object that is returned. 
+    //this is the same as when we had our constructor function.
+    //.this will automatically refer to a new object.
+    this.r = r;
+    this.b = b;
+    this.g = g;
+    this.Colourname = name;
+    }
+
+}
+//when we call new color, it still follows the same steps.
+//it makes a new object, and it set the value of .this to that object.
+//so .this .r will be whatever is based in as r in this case, 200.
+const colour1 = new Color(200, 43, 89, "strawberry")
+//when we run this code, colour 1 is an object having the following data form:
+//Color {r: 200, b: 89, g: 43, Colourname: "strawberry"}
+//these property names were all set in the constuctor. 
+
+class Color {
+    constructor(r, g, b, name) {
+    this.r = r;
+    this.b = b;
+    this.g = g;
+    this.Colourname = name;
+    }
+    //we can use this syntax for defining our methods within our constructor
+    //this is now a method on every colour, but not on every instance. 
+    //Using classes, we can see how we can group everything together!
+    //our greet method is now on the prototype! There is only one copy.
+    greet(){
+        return `Hello From ${this.Colourname}!`
+    }
+
+}
+//if we call colour1.greet() we recieve: "Hello from Strawberry";
+const colour1 = new Color(200, 43, 89, "strawberry");
+//if we call colour.greet() we recieve: "Hello from white";
+const colour2 = new Color(255, 255, 255, "white");
+*/
+class Color {
+    constructor(r, g, b, name) {
+    this.r = r;
+    this.b = b;
+    this.g = g;
+    this.Colourname = name;
+    }
+//anytime we are within a class using the new keyword, .this refers to the instance of the class. The individual objects
+//not the prototype or anything like that. 
+//so in our methods, we can deconstruct the objects that we want.
+
+    innerRGB(){
+        const {r, g, b} = this;
+        return `${r}, ${g}, ${b}`;
+    }
+    rgb() {
+        return `rgb(${this.innerRGB()})`
+    }
+    rgba(a = 1.0) {
+        return `rgba(${this.innerRGB()}, ${a})`
+    }
+
+    hex() {
+        const {r, g, b} = this;
+        return `#` + ((1 << 25) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+}
+//if we call colour1.rgb we get the following: rgb(200, 43, 89)
+//if we cann colour1.hex we get the following: "#c82b59"
+const colour1 = new Color(200, 43, 89, "strawberry");
+//if we call colour2.rgb we get the following: "rgb(255, 255, 255)
+//if we call colour2.hex we get the following: "#ffffff"
+const colour2 = new Color(255, 255, 255, "white");
+
+
 
 
 

@@ -114,13 +114,28 @@ This syntax is now very good, this is why the class keyword and the new class ke
 
 ### JS CLASSES - SYNTACTICAL SUGAR 
 
+In this section, we are going to see a better way of replicating the exact same functionality that we have since in the previous section. Creating a template for a colour, which has different properties and then we add methods to the color prototype so that there is only one copy of them across all instances of that colour. 
 
+This better option, in the NEW CLASS syntax. This syntax is just syntactical sugar, for exactly what we've been doing.  We are going to look at how we can rewrite our work from the last section into a single class. The main benefit of this is that we don't have to add methods to the prototype manually like we did in the previous section and we don't have to break up the constructor function and then seperately add methods. 
 
+![images](/images/section19/class1.png)
+
+The real advantage of using classes, is when we want to add methods! 
+
+![images](/images/section19/class2.png)
+
+Let's now add some methods that are actually useful within our class!
+
+![images](/images/section19/class3.png)
+
+So now we have covered most of the basics when it comes to classes. You define a class with the class keyword, which we capitalise. The first thing we do then is define a constructor. The constructor will run automatically whenever we call a NEW instance of that class. Inside the class, if we are inside a method, the keyword .this will refer to the individual object. So when we go this.r = r; we are  assigning properties to each colour. Not to the protoype but to the colour.
+
+The methods that we have added (for example rgb()) are added automatically to the prototype. We can therefore keep everything together within our class. 
 
 
 ### A BIT MORE PRACTICE WITH CLASSES 
 
-
+In this section, we are going to continue to add onto our class from the previous section.
 
 
 
