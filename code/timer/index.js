@@ -6,21 +6,32 @@ class Timer {
         this.startButton = startButton;
         this.pauseButton = pauseButton;
 
-        this.startButton.addEventListener('click', this.start.bind(this));
-    //.bind returns us a new function. Which we can call sometime in the future.
-    //calling .bind doesn't run start straight away. We're still passing a function to the event listener.
-    //that's going to be executed at some point in the future after the user clicks on the button.
-    //With .bind, we pass in the first argument into .bind which is going to be what the value of .this is forced to be, 
-    //inside of the start function.
-    //the value of .this in the start function is forced to be the value of .this on line 9 within the constructor.
+//we wait for a click event on our start button, then we run the .start method.
+        this.startButton.addEventListener('click', this.start);
+//we wait for a click event on our pause button, then we run the .pause method.
+        this.pauseButton.addEventListener('click', this.pause);
     }
 
-    start() {
-        this.importantMethodToCall();
+    start = () => {
+        this.tick();
+//whenever we call setInterval, we get back an interger. This interger is an id. 
+//this interger represents the running timer or the running interval,
+// that is going to continue running this function again and again
+//if we want to stop that timer, or the setInterval from running, we can run clearInterval.
+//this method starts the timer ticking when the start button is clicked.
+        this.intervalID= setInterval(this.tick, 1000);   
+
+    };
+
+    tick = () => {
+        console.log('tick');
     }
     
-    importantMethodToCall() {
-        console.log('IMPORTANT THINGS WERE DONE')
+    pause = () => {
+//when we run clearInterval(interval) we pass in the id of the interval we want to stop. 
+//in this case, it is the instance variable this.intervalID that we want to stop from ticking. 
+//this method stops the ticker from continuing once the pauseButton has been clicked. 
+        clearInterval(this.intervalID);
     }
 }
 
@@ -30,7 +41,7 @@ const pauseButton = document.querySelector('#pause');
 
 const timer = new Timer(durationInput, startButton, pauseButton)
 
-timer.start() 
+
 
 
 

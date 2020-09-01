@@ -68,6 +68,7 @@ Our timer class will be fully focused on the counter the play button and the pau
 
 Whenever we create an instance of our Class Timer, we are going to have a construction which will take three arguments. We are going to reference some dom element that will serve as our text input. We are going to pass some dom-element that will serve as a start button and thirdly, pass in an argument for our pause button. 
 
+![images](/images/section20/classtimer.png)
 
 ### Binding Events in a Class 
 
@@ -119,13 +120,16 @@ In order to solve our problem we have, where we need to call start() and have it
 
 ##### Second Solution Using 'Bind', 'Call' or 'Apply
 
+This is a more dated way to control the value of .this, however we will often see it in older code. 
 
+![images](/images/section20/bindcall3.png)
 
 
 ### Starting and Pausing the Time 
 
+![images](/images/section20/ticktock.png)
 
-
+![images](/images/section20/classical.png)
 
 ### Where to store data? 
 
